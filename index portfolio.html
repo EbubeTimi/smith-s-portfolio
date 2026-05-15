@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smith Onyekwereh — Executive Assistant & Legal Researcher</title>
+<meta name="description" content="Smith Onyekwereh is an Executive Assistant, Legal Researcher, and AI Content Specialist available for remote work globally.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #FAFAF7;
+  --text:    #111111;
+  --muted:   #666;
+  --faint:   #999;
+  --navy:    #1B3461;
+  --gold:    #C08B2B;
+  --surface: #F1EFEA;
+  --border:  #E0DEDA;
+  --white:   #FFFFFF;
+  --radius:  12px;
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  background: rgba(250,250,247,0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(1.25rem, 5vw, 3rem);
+}
+
+.nav-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 600; font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-right { display: flex; align-items: center; gap: 1.5rem; }
+
+.nav-link {
+  text-decoration: none; color: var(--muted);
+  font-size: .85rem; font-weight: 500;
+  transition: color .2s;
+}
+.nav-link:hover { color: var(--text); }
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .5rem 1.25rem; border-radius: 7px;
+  font-size: .875rem; font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-decoration: none; cursor: pointer;
+  transition: all .18s; border: 1.5px solid transparent;
+  letter-spacing: -.01em;
+}
+.btn-navy { background: var(--navy); color: #fff; border-color: var(--navy); }
+.btn-navy:hover { background: #142848; border-color: #142848; }
+.btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
+.btn-outline:hover { border-color: var(--navy); color: var(--navy); }
+.btn-white { background: #fff; color: var(--navy); border-color: #fff; }
+.btn-white:hover { background: #EBF0FA; }
+.btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.35); }
+.btn-ghost:hover { border-color: #fff; }
+
+/* ── LAYOUT ── */
+.container { max-width: 960px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); }
+section { padding: clamp(4rem, 8vw, 6.5rem) clamp(1.25rem, 5vw, 3rem); max-width: 960px; margin: 0 auto; }
+
+/* ── HERO ── */
+.hero { padding-top: clamp(110px, 20vw, 160px); padding-bottom: 3rem; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 100px; padding: .28rem 1rem;
+  font-size: .75rem; font-weight: 600;
+  color: var(--navy); text-transform: uppercase; letter-spacing: .07em;
+  margin-bottom: 1.75rem;
+}
+.hero-badge-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: #3DBE6C;
+}
+
+h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(3.6rem, 9vw, 7rem);
+  font-weight: 700; line-height: .96;
+  letter-spacing: -0.035em;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.hero-sub {
+  font-size: clamp(.95rem, 2vw, 1.1rem);
+  color: var(--muted); max-width: 520px; line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+
+.hero-ctas { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+/* ── DIVIDER ── */
+.divider { height: 1px; background: var(--border); margin: 0 clamp(1.25rem, 5vw, 3rem); }
+
+/* ── STATS ── */
+.stats-wrap { padding: 0 clamp(1.25rem, 5vw, 3rem); max-width: 960px; margin: 0 auto; }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.stat { background: var(--white); padding: 1.75rem 1.5rem; border-right: 1px solid var(--border); }
+.stat:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700; line-height: 1;
+  margin-bottom: .35rem; color: var(--text);
+}
+.stat-label { font-size: .75rem; color: var(--faint); font-weight: 500; text-transform: uppercase; letter-spacing: .05em; line-height: 1.4; }
+
+/* ── ABOUT ── */
+.about-grid { display: grid; grid-template-columns: 1fr 1.8fr; gap: 4rem; align-items: start; }
+.about-heading { font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; line-height: 1.08; letter-spacing: -.025em; }
+.about-heading em { font-style: italic; color: var(--gold); }
+.about-text p { font-size: .97rem; color: var(--muted); line-height: 1.8; margin-bottom: .9rem; }
+.about-text p:last-of-type { margin-bottom: 1.5rem; }
+.tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.tag {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 100px; padding: .28rem .9rem;
+  font-size: .76rem; font-weight: 600; color: var(--text);
+}
+
+/* ── SECTION HEADER ── */
+.sec-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: var(--gold); margin-bottom: .4rem; }
+.sec-title { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.1; margin-bottom: 2.75rem; }
+
+/* ── SERVICES ── */
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.service {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.75rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+.service:hover { border-color: var(--navy); box-shadow: 0 4px 24px rgba(27,52,97,.06); }
+.service-icon { font-size: 1.4rem; margin-bottom: 1.1rem; display: block; }
+.service-name { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: .6rem; }
+.service-body { font-size: .875rem; color: var(--muted); line-height: 1.65; }
+
+/* ── WORK ── */
+.work-row {
+  display: grid; grid-template-columns: 170px 1fr;
+  gap: 2.5rem; padding: 2rem 0; border-top: 1px solid var(--border);
+}
+.work-row:last-child { border-bottom: 1px solid var(--border); }
+.work-period { font-size: .8rem; color: var(--muted); font-weight: 500; padding-top: .2rem; }
+.work-org { font-size: .8rem; color: var(--faint); margin-top: .3rem; }
+.work-role { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: .5rem; }
+.work-detail { font-size: .9rem; color: var(--muted); line-height: 1.65; }
+.badge {
+  display: inline-block; margin-top: .75rem;
+  background: #EAF1FB; color: var(--navy);
+  border-radius: 5px; padding: .18rem .65rem;
+  font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+}
+.badge-gold { background: #FDF3E0; color: var(--gold); }
+
+/* ── CONTACT ── */
+.contact-box {
+  background: var(--navy); border-radius: 18px;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  display: flex; justify-content: space-between; align-items: center; gap: 2rem;
+  flex-wrap: wrap;
+}
+.contact-box h2 { font-family: 'Fraunces', serif; font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; color: #fff; margin-bottom: .35rem; }
+.contact-box p { color: rgba(255,255,255,.65); font-size: .9rem; }
+.contact-btns { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+/* ── FOOTER ── */
+footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--faint); border-top: 1px solid var(--border); }
+
+/* ── ANIMATIONS ── */
+.fade { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+.fade.in { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 800px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat { border-right: none; border-bottom: 1px solid var(--border); }
+  .stat:nth-child(odd) { border-right: 1px solid var(--border); }
+  .stat:nth-last-child(-n+2) { border-bottom: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .services { grid-template-columns: 1fr; }
+  .work-row { grid-template-columns: 1fr; gap: .5rem; }
+  .nav-right .nav-link { display: none; }
+}
+
+@media (max-width: 480px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  h1 { font-size: 3.2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="#">Smith Onyekwereh</a>
+  <div class="nav-right">
+    <a class="nav-link" href="#about">About</a>
+    <a class="nav-link" href="#services">Services</a>
+    <a class="nav-link" href="#work">Work</a>
+    <a class="btn btn-navy" href="#contact" style="padding:.42rem 1rem; font-size:.82rem;">Let's talk</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span class="hero-badge-dot"></span>Available for remote work</div>
+  <h1>Smith<br>Onyekwereh.</h1>
+  <p class="hero-sub">Executive Assistant, Legal Researcher, and AI Content Specialist. 18+ months of remote experience across law, operations, editorial, and AI video production.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-navy" href="mailto:smithonyekwereh1@gmail.com">Get in touch</a>
+    <a class="btn btn-outline" href="https://linkedin.com/in/smithonyekwereh" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STATS -->
+<div class="stats-wrap" style="padding-top:3rem; padding-bottom:3rem;">
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num" data-val="363" data-suf="K+">0</div>
+      <div class="stat-label">Video views,<br>single piece</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-val="10" data-suf="K+">0</div>
+      <div class="stat-label">Subscribers<br>grown, 9 months</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-val="99" data-suf="+">0</div>
+      <div class="stat-label">Influencer profiles<br>built from scratch</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-val="150" data-suf="+">0</div>
+      <div class="stat-label">Original posts<br>published</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about" class="fade">
+  <div class="about-grid">
+    <div>
+      <h2 class="about-heading">Built for<br><em>precise</em><br>remote work.</h2>
+    </div>
+    <div class="about-text">
+      <p>I am a law graduate and certified Virtual Assistant. Most of what I have done professionally has been about figuring out new territory fast: IP research in Belgium one month, growing a YouTube channel from scratch, running a poetry platform's full editorial and social operations, and keeping a project manager's operations tight across multiple workstreams at once.</p>
+      <p>I like problems that do not have an obvious system yet. Give me something scattered and I will build the structure. I am creative, I pick up new tools quickly, and I work fully remotely.</p>
+      <div class="tags">
+        <span class="tag">Remote-first</span>
+        <span class="tag">Legal research</span>
+        <span class="tag">AI tools</span>
+        <span class="tag">Canva</span>
+        <span class="tag">CapCut</span>
+        <span class="tag">Google Workspace</span>
+        <span class="tag">Yoruba / English</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section id="services" class="fade">
+  <div class="sec-label">What I do</div>
+  <div class="services" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+    <div class="service">
+      <span class="service-icon">📋</span>
+      <div class="service-name">Executive &amp; VA Support</div>
+      <p class="service-body">Calendar and inbox management, scheduling, stakeholder correspondence, payment tracking, database management, data entry, and day-to-day operational support. I keep things moving so nothing gets dropped.</p>
+    </div>
+    <div class="service">
+      <span class="service-icon">📬</span>
+      <div class="service-name">Communications &amp; Coordination</div>
+      <p class="service-body">Email drafting, meeting minutes, client-facing correspondence, follow-up management, and multi-party coordination across email, WhatsApp, and phone. Clean, professional communication on your behalf.</p>
+    </div>
+    <div class="service">
+      <span class="service-icon">⚖️</span>
+      <div class="service-name">Legal Research</div>
+      <p class="service-body">Case law analysis, cross-jurisdictional research, contract review and drafting, legal memoranda, Terms of Service, and stakeholder database building. Accuracy is the baseline, not the goal.</p>
+    </div>
+    <div class="service">
+      <span class="service-icon">📚</span>
+      <div class="service-name">Academic Research</div>
+      <p class="service-body">Desk research, literature review, qualitative research, interview identification and outreach, structured research databases, and publication-ready written outputs delivered independently.</p>
+    </div>
+    <div class="service">
+      <span class="service-icon">🎬</span>
+      <div class="service-name">Content &amp; AI Production</div>
+      <p class="service-body">AI-animated video production (Kling, CapCut), social media management, editorial coordination, Yoruba-English transcription and translation, Canva graphics, and Mailchimp newsletters.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WORK -->
+<section id="work" class="fade">
+  <div class="sec-label">Experience</div>
+  <div class="sec-title">Selected work.</div>
+
+  <div class="work-row">
+    <div>
+      <div class="work-period">Mar 2026 – Present</div>
+      <div class="work-org">NorthQuest Finance</div>
+    </div>
+    <div>
+      <div class="work-role">Virtual Assistant</div>
+      <p class="work-detail">Daily operations and multi-workstream coordination for a project manager. Built a 99-profile influencer database, managed full recruitment pipelines, tracked payments via Google Sheets, reviewed commercial contracts, and handled all stakeholder correspondence remotely.</p>
+      <span class="badge">Current</span>
+    </div>
+  </div>
+
+  <div class="work-row">
+    <div>
+      <div class="work-period">Oct 2024 – Mar 2025</div>
+      <div class="work-org">University of Antwerp / MIPLC · Belgium</div>
+    </div>
+    <div>
+      <div class="work-role">University Research Assistant</div>
+      <p class="work-detail">IP law research (copyright, trademarks, CMOs) for a PhD project at the University of Antwerp and Munich Intellectual Property Law Center. Built a 90+ contact stakeholder database across the US and Netherlands. Drafted memoranda, contracts, and Terms of Service independently.</p>
+    </div>
+  </div>
+
+  <div class="work-row">
+    <div>
+      <div class="work-period">Nov 2024 – Present</div>
+      <div class="work-org">Aunty Akanke</div>
+    </div>
+    <div>
+      <div class="work-role">AI Video Content Manager</div>
+      <p class="work-detail">Produced and edited 9 AI-animated video segments using Kling, Wan 2.1, and CapCut. Highest single video: 363,000 views. Grew channel from 108 to 10,000+ subscribers in under 9 months. Transcribed and translated Yoruba audio to English.</p>
+      <span class="badge badge-gold">363K views</span>
+    </div>
+  </div>
+
+  <div class="work-row">
+    <div>
+      <div class="work-period">Nov 2024 – Apr 2025</div>
+      <div class="work-org">Pidgin Poetry</div>
+    </div>
+    <div>
+      <div class="work-role">Managing Editor &amp; Social Media Manager</div>
+      <p class="work-detail">Grew the platform from 20 to 491 followers in 5 months. Published 150+ original posts, ran the platform's first open poetry contest, managed all inbox correspondence for 100+ monthly inquiries, created Canva graphics, and sent weekly Mailchimp newsletters.</p>
+    </div>
+  </div>
+
+
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-box">
+    <div>
+      <h2>Ready to work.</h2>
+      <p>Remote · GMT+1 · Available now</p>
+    </div>
+    <div class="contact-btns">
+      <a class="btn btn-white" href="mailto:smithonyekwereh1@gmail.com">smithonyekwereh1@gmail.com</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/smithonyekwereh" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://wa.me/2349076217386" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Smith Onyekwereh &nbsp;&middot;&nbsp; Remote, GMT+1
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+const numIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = +el.dataset.val;
+    const suf = el.dataset.suf || '';
+    const dur = 1100;
+    const t0 = performance.now();
+    (function tick(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(ease * target) + suf;
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+    numIO.unobserve(el);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-val]').forEach(el => numIO.observe(el));
+</script>
+</body>
+</html>
