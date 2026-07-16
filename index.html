@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smith Onyekwereh — Executive Assistant & Legal Researcher</title>
-<meta name="description" content="Smith Onyekwereh is an Executive Assistant, Legal Researcher, and AI Content Specialist available for remote work globally.">
+<title>Smith Onyekwereh — Virtual &amp; Administrative Assistant · AI Operations</title>
+<meta name="description" content="Smith Onyekwereh is a Virtual and Administrative Assistant who uses AI operations and automation to build the systems behind remote teams — available for remote work globally.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:      #FAFAF7;
   --text:    #111111;
-  --muted:   #666;
-  --faint:   #999;
+  --muted:   #63605B;
+  --faint:   #9B968E;
   --navy:    #1B3461;
+  --navy-2:  #142848;
   --gold:    #C08B2B;
   --surface: #F1EFEA;
   --border:  #E0DEDA;
@@ -27,7 +28,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Hanken Grotesk', sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -38,19 +39,18 @@ body {
 /* ── NAV ── */
 nav {
   position: fixed; top:0; left:0; right:0; z-index:100;
-  background: rgba(250,250,247,0.9);
+  background: rgba(250,250,247,0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  height: 60px;
+  height: 62px;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 clamp(1.25rem, 5vw, 3rem);
 }
 
 .nav-name {
-  font-family: 'Fraunces', serif;
-  font-weight: 600; font-size: 1.05rem;
-  letter-spacing: -0.01em;
+  font-weight: 800; font-size: 1rem;
+  letter-spacing: -0.02em;
   color: var(--text);
   text-decoration: none;
 }
@@ -59,23 +59,25 @@ nav {
 
 .nav-link {
   text-decoration: none; color: var(--muted);
-  font-size: .85rem; font-weight: 500;
+  font-size: .85rem; font-weight: 600;
   transition: color .2s;
 }
 .nav-link:hover { color: var(--text); }
 
 /* ── BUTTONS ── */
 .btn {
-  display: inline-flex; align-items: center; gap: .4rem;
-  padding: .5rem 1.25rem; border-radius: 7px;
-  font-size: .875rem; font-weight: 600;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: inline-flex; align-items: center; gap: .45rem;
+  padding: .6rem 1.35rem; border-radius: 8px;
+  font-size: .875rem; font-weight: 700;
+  font-family: 'Hanken Grotesk', sans-serif;
   text-decoration: none; cursor: pointer;
-  transition: all .18s; border: 1.5px solid transparent;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+  border: 1.5px solid transparent;
   letter-spacing: -.01em;
 }
+.btn:hover { transform: translateY(-2px); }
 .btn-navy { background: var(--navy); color: #fff; border-color: var(--navy); }
-.btn-navy:hover { background: #142848; border-color: #142848; }
+.btn-navy:hover { background: var(--navy-2); border-color: var(--navy-2); box-shadow: 0 8px 20px -8px rgba(27,52,97,.45); }
 .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
 .btn-outline:hover { border-color: var(--navy); color: var(--navy); }
 .btn-white { background: #fff; color: var(--navy); border-color: #fff; }
@@ -84,143 +86,221 @@ nav {
 .btn-ghost:hover { border-color: #fff; }
 
 /* ── LAYOUT ── */
-.container { max-width: 960px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); }
-section { padding: clamp(4rem, 8vw, 6.5rem) clamp(1.25rem, 5vw, 3rem); max-width: 960px; margin: 0 auto; }
+section { padding: clamp(4rem, 8vw, 6.5rem) clamp(1.25rem, 5vw, 3rem); max-width: 1020px; margin: 0 auto; }
+.divider { height: 1px; background: var(--border); margin: 0 clamp(1.25rem, 5vw, 3rem); }
+
+/* ── SECTION HEADER ── */
+.sec-label {
+  font-size: .72rem; text-transform: uppercase; letter-spacing: .14em;
+  font-weight: 800; color: var(--gold); margin-bottom: .5rem;
+  display: flex; align-items: center; gap: .6rem;
+}
+.sec-label::before { content:''; width: 22px; height: 2px; background: var(--gold); display:inline-block; }
+.sec-title {
+  font-size: clamp(1.9rem, 4.5vw, 2.7rem); font-weight: 800;
+  letter-spacing: -.03em; line-height: 1.06; margin-bottom: 2.75rem;
+}
+.sec-intro { font-size: .95rem; color: var(--muted); max-width: 620px; line-height: 1.75; margin-top: -1.9rem; margin-bottom: 2.75rem; }
 
 /* ── HERO ── */
-.hero { padding-top: clamp(110px, 20vw, 160px); padding-bottom: 3rem; }
+.hero { padding-top: clamp(120px, 20vw, 170px); padding-bottom: 3.5rem; }
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: .5rem;
   background: var(--surface); border: 1px solid var(--border);
-  border-radius: 100px; padding: .28rem 1rem;
-  font-size: .75rem; font-weight: 600;
-  color: var(--navy); text-transform: uppercase; letter-spacing: .07em;
-  margin-bottom: 1.75rem;
+  border-radius: 100px; padding: .3rem 1rem;
+  font-size: .74rem; font-weight: 700;
+  color: var(--navy); text-transform: uppercase; letter-spacing: .08em;
+  margin-bottom: 1.9rem;
 }
-.hero-badge-dot {
-  width: 7px; height: 7px; border-radius: 50%; background: #3DBE6C;
+.hero-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #3DBE6C; animation: pulse 2.2s infinite; }
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(61,190,108,.5); }
+  50% { box-shadow: 0 0 0 6px rgba(61,190,108,0); }
 }
 
 h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(3.6rem, 9vw, 7rem);
-  font-weight: 700; line-height: .96;
-  letter-spacing: -0.035em;
-  color: var(--text);
-  margin-bottom: 1.5rem;
+  font-size: clamp(3.4rem, 9vw, 6.6rem);
+  font-weight: 800; line-height: .98;
+  letter-spacing: -0.045em;
+  margin-bottom: 1.75rem;
 }
+h1 .accent { color: var(--navy); }
 
 .hero-sub {
-  font-size: clamp(.95rem, 2vw, 1.1rem);
-  color: var(--muted); max-width: 520px; line-height: 1.75;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--muted); max-width: 620px; line-height: 1.75;
   margin-bottom: 2.5rem;
 }
+.hero-sub strong { color: var(--text); font-weight: 700; }
 
 .hero-ctas { display: flex; gap: .75rem; flex-wrap: wrap; }
 
-/* ── DIVIDER ── */
-.divider { height: 1px; background: var(--border); margin: 0 clamp(1.25rem, 5vw, 3rem); }
+/* hero entrance */
+.hero .rise { opacity: 0; transform: translateY(26px); animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+.hero .rise.d1 { animation-delay: .05s; }
+.hero .rise.d2 { animation-delay: .18s; }
+.hero .rise.d3 { animation-delay: .34s; }
+.hero .rise.d4 { animation-delay: .5s; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+
+/* ── MARQUEE ── */
+.marquee-wrap {
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  background: var(--white);
+  overflow: hidden; padding: 1rem 0;
+}
+.marquee { display: flex; width: max-content; animation: scroll 36s linear infinite; }
+.marquee-inner { display: flex; align-items: center; gap: 2.4rem; padding-right: 2.4rem; }
+.marquee span {
+  font-size: .78rem; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--faint); white-space: nowrap;
+}
+.marquee i { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+@keyframes scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation: none; }
+  .hero .rise { animation: none; opacity: 1; transform: none; }
+}
 
 /* ── STATS ── */
-.stats-wrap { padding: 0 clamp(1.25rem, 5vw, 3rem); max-width: 960px; margin: 0 auto; }
+.stats-wrap { padding: 3rem clamp(1.25rem, 5vw, 3rem); max-width: 1020px; margin: 0 auto; }
 .stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
 }
-.stat { background: var(--white); padding: 1.75rem 1.5rem; border-right: 1px solid var(--border); }
-.stat:last-child { border-right: none; }
+.stat { background: var(--white); padding: 1.9rem 1.6rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stat:nth-child(3n) { border-right: none; }
+.stat:nth-last-child(-n+3) { border-bottom: none; }
 .stat-num {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
-  font-weight: 700; line-height: 1;
-  margin-bottom: .35rem; color: var(--text);
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  font-weight: 800; line-height: 1; letter-spacing: -.03em;
+  margin-bottom: .4rem;
+  font-variant-numeric: tabular-nums;
 }
-.stat-label { font-size: .75rem; color: var(--faint); font-weight: 500; text-transform: uppercase; letter-spacing: .05em; line-height: 1.4; }
+.stat-label { font-size: .74rem; color: var(--faint); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; line-height: 1.45; }
 
 /* ── ABOUT ── */
-.about-grid { display: grid; grid-template-columns: 1fr 1.8fr; gap: 4rem; align-items: start; }
-.about-heading { font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; line-height: 1.08; letter-spacing: -.025em; }
-.about-heading em { font-style: italic; color: var(--gold); }
-.about-text p { font-size: .97rem; color: var(--muted); line-height: 1.8; margin-bottom: .9rem; }
-.about-text p:last-of-type { margin-bottom: 1.5rem; }
+.about-grid { display: grid; grid-template-columns: 1fr 1.7fr; gap: 4rem; align-items: start; }
+.about-heading { font-size: clamp(2rem, 5vw, 2.7rem); font-weight: 800; line-height: 1.08; letter-spacing: -.035em; }
+.about-heading em { font-style: normal; color: var(--gold); }
+.about-text p { font-size: .98rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+.about-text p:last-of-type { margin-bottom: 1.6rem; }
 .tags { display: flex; flex-wrap: wrap; gap: .5rem; }
 .tag {
   background: var(--surface); border: 1px solid var(--border);
-  border-radius: 100px; padding: .28rem .9rem;
-  font-size: .76rem; font-weight: 600; color: var(--text);
+  border-radius: 100px; padding: .3rem .95rem;
+  font-size: .76rem; font-weight: 700; color: var(--text);
+  transition: border-color .2s, transform .2s;
 }
-
-/* ── SECTION HEADER ── */
-.sec-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: var(--gold); margin-bottom: .4rem; }
-.sec-title { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.1; margin-bottom: 2.75rem; }
+.tag:hover { border-color: var(--gold); transform: translateY(-2px); }
 
 /* ── SERVICES ── */
 .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .service {
   background: var(--white); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 1.75rem;
-  transition: border-color .2s, box-shadow .2s;
+  border-radius: var(--radius); padding: 1.8rem;
+  transition: border-color .25s, box-shadow .25s, transform .25s;
+  position: relative;
 }
-.service:hover { border-color: var(--navy); box-shadow: 0 4px 24px rgba(27,52,97,.06); }
-.service-icon { font-size: 1.4rem; margin-bottom: 1.1rem; display: block; }
-.service-name { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: .6rem; }
-.service-body { font-size: .875rem; color: var(--muted); line-height: 1.65; }
+.service:hover { border-color: var(--navy); box-shadow: 0 14px 34px -16px rgba(27,52,97,.22); transform: translateY(-4px); }
+.service-num {
+  font-size: .78rem; font-weight: 800; letter-spacing: .1em;
+  color: var(--gold); margin-bottom: .9rem; display: block;
+}
+.service-name { font-size: 1.06rem; font-weight: 800; letter-spacing: -.015em; margin-bottom: .55rem; }
+.service-body { font-size: .875rem; color: var(--muted); line-height: 1.68; }
 
 /* ── WORK ── */
 .work-row {
-  display: grid; grid-template-columns: 170px 1fr;
-  gap: 2.5rem; padding: 2rem 0; border-top: 1px solid var(--border);
+  display: grid; grid-template-columns: 175px 1fr;
+  gap: 2.5rem; padding: 2.1rem 0; border-top: 1px solid var(--border);
+  transition: background .25s;
 }
-.work-row:last-child { border-bottom: 1px solid var(--border); }
-.work-period { font-size: .8rem; color: var(--muted); font-weight: 500; padding-top: .2rem; }
-.work-org { font-size: .8rem; color: var(--faint); margin-top: .3rem; }
-.work-role { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: .5rem; }
-.work-detail { font-size: .9rem; color: var(--muted); line-height: 1.65; }
+.work-row:last-of-type { border-bottom: 1px solid var(--border); }
+.work-period { font-size: .8rem; color: var(--muted); font-weight: 600; padding-top: .2rem; }
+.work-org { font-size: .8rem; color: var(--faint); margin-top: .3rem; font-weight: 500; }
+.work-role { font-size: 1.12rem; font-weight: 800; letter-spacing: -.015em; margin-bottom: .5rem; }
+.work-detail { font-size: .9rem; color: var(--muted); line-height: 1.7; }
 .badge {
-  display: inline-block; margin-top: .75rem;
+  display: inline-block; margin-top: .8rem; margin-right: .4rem;
   background: #EAF1FB; color: var(--navy);
-  border-radius: 5px; padding: .18rem .65rem;
-  font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+  border-radius: 6px; padding: .2rem .7rem;
+  font-size: .71rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em;
 }
 .badge-gold { background: #FDF3E0; color: var(--gold); }
+.case-link {
+  display: inline-flex; align-items: center; gap: .3rem; margin-top: .8rem;
+  font-size: .84rem; font-weight: 700; color: var(--navy); text-decoration: none;
+  border-bottom: 2px solid transparent; transition: border-color .2s;
+}
+.case-link:hover { border-color: var(--navy); }
+
+/* ── SYSTEMS / CASE STUDIES ── */
+.case-study { padding: 3rem 0; border-top: 1px solid var(--border); }
+.case-study:first-of-type { border-top: none; padding-top: 0; }
+.case-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.5rem; margin-bottom: .7rem; flex-wrap: wrap; }
+.case-name { font-size: 1.3rem; font-weight: 800; letter-spacing: -.02em; }
+.case-badges { display: flex; gap: .5rem; flex-shrink: 0; }
+.case-badges .badge { margin-top: 0; }
+.case-detail { font-size: .92rem; color: var(--muted); line-height: 1.75; max-width: 720px; margin-bottom: 1.8rem; }
+.case-detail strong { color: var(--text); font-weight: 700; }
+
+.ci-top { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-bottom: 1rem; align-items: start; }
+.ci-stack { display: flex; flex-direction: column; gap: 1rem; }
+.ci-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.case-study figure { margin: 0; }
+.case-study figure img {
+  width: 100%; display: block; border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 10px rgba(17,17,17,.05);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.case-study figure:hover img { transform: translateY(-4px) scale(1.01); box-shadow: 0 18px 40px -14px rgba(17,17,17,.25); }
+.case-study figcaption { font-size: .74rem; color: var(--faint); margin-top: .55rem; line-height: 1.45; font-weight: 600; }
 
 /* ── CONTACT ── */
 .contact-box {
-  background: var(--navy); border-radius: 18px;
-  padding: clamp(2rem, 5vw, 3.5rem);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+  border-radius: 20px;
+  padding: clamp(2.2rem, 5vw, 3.8rem);
   display: flex; justify-content: space-between; align-items: center; gap: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; position: relative; overflow: hidden;
 }
-.contact-box h2 { font-family: 'Fraunces', serif; font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; color: #fff; margin-bottom: .35rem; }
-.contact-box p { color: rgba(255,255,255,.65); font-size: .9rem; }
-.contact-btns { display: flex; gap: .75rem; flex-wrap: wrap; }
+.contact-box::after {
+  content:''; position:absolute; right:-70px; top:-70px; width:240px; height:240px;
+  border-radius:50%; border: 1px solid rgba(255,255,255,.14);
+}
+.contact-box::before {
+  content:''; position:absolute; right:-20px; top:30px; width:150px; height:150px;
+  border-radius:50%; border: 1px solid rgba(192,139,43,.4);
+}
+.contact-box h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 800; letter-spacing: -.03em; color: #fff; margin-bottom: .4rem; }
+.contact-box p { color: rgba(255,255,255,.68); font-size: .9rem; }
+.contact-btns { display: flex; gap: .75rem; flex-wrap: wrap; position: relative; z-index: 1; }
 
 /* ── FOOTER ── */
-footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--faint); border-top: 1px solid var(--border); }
+footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--faint); border-top: 1px solid var(--border); font-weight: 500; }
 
-/* ── ANIMATIONS ── */
-.fade { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+/* ── SCROLL ANIMATIONS ── */
+.fade { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1); }
 .fade.in { opacity: 1; transform: none; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 800px) {
   .stats { grid-template-columns: repeat(2, 1fr); }
-  .stat { border-right: none; border-bottom: 1px solid var(--border); }
-  .stat:nth-child(odd) { border-right: 1px solid var(--border); }
+  .stat:nth-child(3n) { border-right: 1px solid var(--border); }
+  .stat:nth-child(2n) { border-right: none; }
+  .stat:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); }
   .stat:nth-last-child(-n+2) { border-bottom: none; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .services { grid-template-columns: 1fr; }
   .work-row { grid-template-columns: 1fr; gap: .5rem; }
+  .ci-top, .ci-bottom { grid-template-columns: 1fr; }
   .nav-right .nav-link { display: none; }
-}
-
-@media (max-width: 480px) {
-  .stats { grid-template-columns: 1fr 1fr; }
-  h1 { font-size: 3.2rem; }
 }
 </style>
 </head>
@@ -232,39 +312,64 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
     <a class="nav-link" href="#about">About</a>
     <a class="nav-link" href="#services">Services</a>
     <a class="nav-link" href="#work">Work</a>
-    <a class="btn btn-navy" href="#contact" style="padding:.42rem 1rem; font-size:.82rem;">Let's talk</a>
+    <a class="nav-link" href="#systems">Systems</a>
+    <a class="btn btn-navy" href="#contact" style="padding:.45rem 1.05rem; font-size:.82rem;">Let's talk</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge"><span class="hero-badge-dot"></span>Available for remote work</div>
-  <h1>Smith<br>Onyekwereh.</h1>
-  <p class="hero-sub">Executive Assistant, Legal Researcher, and AI Content Specialist. 18+ months of remote experience across law, operations, editorial, and AI video production.</p>
-  <div class="hero-ctas">
+  <div class="hero-badge rise d1"><span class="hero-badge-dot"></span>Available for remote work</div>
+  <h1 class="rise d2">Smith<br><span class="accent">Onyekwereh.</span></h1>
+  <p class="hero-sub rise d3">Virtual and Administrative Assistant with 18+ months of remote experience — using <strong>AI, operations and automation</strong> to do the work better. I run creator programs, build the systems that run them with Claude and ChatGPT, and keep every workstream reported, documented, and moving.</p>
+  <div class="hero-ctas rise d4">
     <a class="btn btn-navy" href="mailto:smithonyekwereh1@gmail.com">Get in touch</a>
     <a class="btn btn-outline" href="https://linkedin.com/in/smithonyekwereh" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </section>
 
-<div class="divider"></div>
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee">
+    <div class="marquee-inner">
+      <span>Claude AI</span><i></i><span>ChatGPT</span><i></i><span>Google Apps Script</span><i></i>
+      <span>Google Workspace</span><i></i><span>Asana</span><i></i><span>ClickUp</span><i></i>
+      <span>Trello</span><i></i><span>Canva</span><i></i><span>CapCut</span><i></i>
+      <span>Kling</span><i></i><span>Mailchimp</span><i></i><span>Slack</span><i></i>
+    </div>
+    <div class="marquee-inner">
+      <span>Claude AI</span><i></i><span>ChatGPT</span><i></i><span>Google Apps Script</span><i></i>
+      <span>Google Workspace</span><i></i><span>Asana</span><i></i><span>ClickUp</span><i></i>
+      <span>Trello</span><i></i><span>Canva</span><i></i><span>CapCut</span><i></i>
+      <span>Kling</span><i></i><span>Mailchimp</span><i></i><span>Slack</span><i></i>
+    </div>
+  </div>
+</div>
 
 <!-- STATS -->
-<div class="stats-wrap" style="padding-top:3rem; padding-bottom:3rem;">
+<div class="stats-wrap">
   <div class="stats">
-    <div class="stat">
+    <div class="stat fade">
+      <div class="stat-num" data-val="2" data-suf="">0</div>
+      <div class="stat-label">Live systems<br>directed &amp; deployed</div>
+    </div>
+    <div class="stat fade">
+      <div class="stat-num" data-val="99" data-suf="+">0</div>
+      <div class="stat-label">Creator profiles<br>built &amp; managed</div>
+    </div>
+    <div class="stat fade">
+      <div class="stat-num" data-val="30" data-suf="+">0</div>
+      <div class="stat-label">Person remote team<br>supported daily</div>
+    </div>
+    <div class="stat fade">
       <div class="stat-num" data-val="363" data-suf="K+">0</div>
       <div class="stat-label">Video views,<br>single piece</div>
     </div>
-    <div class="stat">
+    <div class="stat fade">
       <div class="stat-num" data-val="10" data-suf="K+">0</div>
       <div class="stat-label">Subscribers<br>grown, 9 months</div>
     </div>
-    <div class="stat">
-      <div class="stat-num" data-val="99" data-suf="+">0</div>
-      <div class="stat-label">Influencer profiles<br>built from scratch</div>
-    </div>
-    <div class="stat">
+    <div class="stat fade">
       <div class="stat-num" data-val="150" data-suf="+">0</div>
       <div class="stat-label">Original posts<br>published</div>
     </div>
@@ -277,18 +382,20 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 <section id="about" class="fade">
   <div class="about-grid">
     <div>
-      <h2 class="about-heading">Built for<br><em>precise</em><br>remote work.</h2>
+      <h2 class="about-heading">I build the<br><em>systems</em><br>behind the work.</h2>
     </div>
     <div class="about-text">
-      <p>I am a law graduate and certified Virtual Assistant. Most of what I have done professionally has been about figuring out new territory fast: IP research in Belgium one month, growing a YouTube channel from scratch, running a poetry platform's full editorial and social operations, and keeping a project manager's operations tight across multiple workstreams at once.</p>
-      <p>I like problems that do not have an obvious system yet. Give me something scattered and I will build the structure. I am creative, I pick up new tools quickly, and I work fully remotely.</p>
+      <p>I'm a Virtual and Administrative Assistant — and AI, operations and automation are how I do the job better. Day to day I run two creator marketing programs, for NorthQuest Finance (a CBN-regulated fintech) and CashDrive (an automotive UGC program): recruitment, contracts, correspondence, payments, and reporting. When those programs needed real tooling, I specified and directed Claude AI through building it — onboarding flows, posting trackers, automated payment registers — then deployed and tested everything myself.</p>
+      <p>I like problems that do not have an obvious system yet. I like creating systems, organizing things, and finding what's repetitive so it can be simplified or done away with. Give me something scattered and I will build the structure. Underneath it all: a law degree, IP research for a PhD project in Belgium, and an AI-animated YouTube channel grown from scratch.</p>
       <div class="tags">
+        <span class="tag">Virtual assistance</span>
+        <span class="tag">AI operations</span>
+        <span class="tag">Process automation</span>
+        <span class="tag">Claude &amp; ChatGPT</span>
+        <span class="tag">SOP design</span>
+        <span class="tag">Google Apps Script</span>
         <span class="tag">Remote-first</span>
         <span class="tag">Legal research</span>
-        <span class="tag">AI tools</span>
-        <span class="tag">Canva</span>
-        <span class="tag">CapCut</span>
-        <span class="tag">Google Workspace</span>
         <span class="tag">Yoruba / English</span>
       </div>
     </div>
@@ -298,33 +405,39 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 <div class="divider"></div>
 
 <!-- SERVICES -->
-<section id="services" class="fade">
-  <div class="sec-label">What I do</div>
-  <div class="services" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-    <div class="service">
-      <span class="service-icon">📋</span>
-      <div class="service-name">Executive &amp; VA Support</div>
-      <p class="service-body">Calendar and inbox management, scheduling, stakeholder correspondence, payment tracking, database management, data entry, and day-to-day operational support. I keep things moving so nothing gets dropped.</p>
+<section id="services">
+  <div class="sec-label fade">What I do</div>
+  <div class="sec-title fade">Six ways I carry the load.</div>
+  <div class="services">
+    <div class="service fade">
+      <span class="service-num">01</span>
+      <div class="service-name">AI Operations &amp; Automation</div>
+      <p class="service-body">Specifying and directing AI-built operations systems — onboarding flows, payment automation, posting-compliance tracking, data-integrity checks — with Claude and ChatGPT, then deploying and testing them end to end on live infrastructure.</p>
     </div>
-    <div class="service">
-      <span class="service-icon">📬</span>
+    <div class="service fade">
+      <span class="service-num">02</span>
+      <div class="service-name">Executive &amp; Administrative Support</div>
+      <p class="service-body">Calendar and inbox management, scheduling, stakeholder correspondence, payment tracking, database management, recruitment coordination, and day-to-day operational support. Nothing gets dropped.</p>
+    </div>
+    <div class="service fade">
+      <span class="service-num">03</span>
       <div class="service-name">Communications &amp; Coordination</div>
-      <p class="service-body">Email drafting, meeting minutes, client-facing correspondence, follow-up management, and multi-party coordination across email, WhatsApp, and phone. Clean, professional communication on your behalf.</p>
+      <p class="service-body">Email drafting, meeting minutes, client-facing correspondence, follow-up management, and multi-party coordination across email, WhatsApp, and phone — clean, professional communication on your behalf.</p>
     </div>
-    <div class="service">
-      <span class="service-icon">⚖️</span>
-      <div class="service-name">Legal Research</div>
-      <p class="service-body">Case law analysis, cross-jurisdictional research, contract review and drafting, legal memoranda, Terms of Service, and stakeholder database building. Accuracy is the baseline, not the goal.</p>
+    <div class="service fade">
+      <span class="service-num">04</span>
+      <div class="service-name">Social Media Management</div>
+      <p class="service-body">Editorial calendars, audience growth, community engagement, and full inbox handling — the way I grew Pidgin Poetry from 20 to 491 followers, published 150+ posts, and answered 100+ inquiries a month.</p>
     </div>
-    <div class="service">
-      <span class="service-icon">📚</span>
-      <div class="service-name">Academic Research</div>
-      <p class="service-body">Desk research, literature review, qualitative research, interview identification and outreach, structured research databases, and publication-ready written outputs delivered independently.</p>
+    <div class="service fade">
+      <span class="service-num">05</span>
+      <div class="service-name">Video Creation &amp; AI Production</div>
+      <p class="service-body">AI-animated video production with Kling, Wan 2.1, and CapCut — scripting, generation, editing, captions, and Yoruba-English transcription. My highest-performing piece reached 363,000 views.</p>
     </div>
-    <div class="service">
-      <span class="service-icon">🎬</span>
-      <div class="service-name">Content &amp; AI Production</div>
-      <p class="service-body">AI-animated video production (Kling, CapCut), social media management, editorial coordination, Yoruba-English transcription and translation, Canva graphics, and Mailchimp newsletters.</p>
+    <div class="service fade">
+      <span class="service-num">06</span>
+      <div class="service-name">Legal &amp; Academic Research</div>
+      <p class="service-body">Case law analysis, contract review and drafting, legal memoranda, and structured research databases — built across doctoral-level IP research, a global law firm's pro bono programme, and live commercial contracts.</p>
     </div>
   </div>
 </section>
@@ -332,23 +445,37 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 <div class="divider"></div>
 
 <!-- WORK -->
-<section id="work" class="fade">
-  <div class="sec-label">Experience</div>
-  <div class="sec-title">Selected work.</div>
+<section id="work">
+  <div class="sec-label fade">Experience</div>
+  <div class="sec-title fade">Selected work.</div>
 
-  <div class="work-row">
+  <div class="work-row fade">
     <div>
       <div class="work-period">Mar 2026 – Present</div>
       <div class="work-org">NorthQuest Finance</div>
     </div>
     <div>
-      <div class="work-role">Virtual Assistant</div>
-      <p class="work-detail">Daily operations and multi-workstream coordination for a project manager. Built a 99-profile influencer database, managed full recruitment pipelines, tracked payments via Google Sheets, reviewed commercial contracts, and handled all stakeholder correspondence remotely.</p>
+      <div class="work-role">Creator Program Administrative Manager</div>
+      <p class="work-detail">Run a UGC creator marketing program for a CBN-regulated fintech — recruitment pipelines, contract review and revision, a 99-profile creator database, payment tracking, and all stakeholder correspondence for a 30+ person remote team. Directed the build of the program's full operations platform using Claude AI: onboarding, posting-compliance tracking, and an automated payment register.</p>
       <span class="badge">Current</span>
+      <div><a class="case-link" href="#systems">See the system built for this program →</a></div>
     </div>
   </div>
 
-  <div class="work-row">
+  <div class="work-row fade">
+    <div>
+      <div class="work-period">Mar 2026 – Present</div>
+      <div class="work-org">CashDrive</div>
+    </div>
+    <div>
+      <div class="work-role">Creator Program Manager</div>
+      <p class="work-detail">Manage the creator marketing program for a Lagos automotive brand — creator onboarding, daily posting compliance, and payroll. Drafted the program's creator agreement with a sales-attribution bonus structure, and directed the build of its own payroll and posting-compliance system: intake, a rate-limited posting log, vehicle-sale bonus tracking, and an auto-calculated payments register.</p>
+      <span class="badge">Current</span>
+      <div><a class="case-link" href="#systems">See the system built for this program →</a></div>
+    </div>
+  </div>
+
+  <div class="work-row fade">
     <div>
       <div class="work-period">Oct 2024 – Mar 2025</div>
       <div class="work-org">University of Antwerp / MIPLC · Belgium</div>
@@ -359,19 +486,19 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
     </div>
   </div>
 
-  <div class="work-row">
+  <div class="work-row fade">
     <div>
       <div class="work-period">Nov 2024 – Present</div>
       <div class="work-org">Aunty Akanke</div>
     </div>
     <div>
       <div class="work-role">AI Video Content Manager</div>
-      <p class="work-detail">Produced and edited 9 AI-animated video segments using Kling, Wan 2.1, and CapCut. Highest single video: 363,000 views. Grew channel from 108 to 10,000+ subscribers in under 9 months. Transcribed and translated Yoruba audio to English.</p>
+      <p class="work-detail">Produced and edited 9 AI-animated video segments using Kling, Wan 2.1, and CapCut. Highest single video: 363,000 views. Grew the channel from 108 to 10,000+ subscribers in under 9 months. Transcribed and translated Yoruba audio to English.</p>
       <span class="badge badge-gold">363K views</span>
     </div>
   </div>
 
-  <div class="work-row">
+  <div class="work-row fade">
     <div>
       <div class="work-period">Nov 2024 – Apr 2025</div>
       <div class="work-org">Pidgin Poetry</div>
@@ -381,16 +508,61 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
       <p class="work-detail">Grew the platform from 20 to 491 followers in 5 months. Published 150+ original posts, ran the platform's first open poetry contest, managed all inbox correspondence for 100+ monthly inquiries, created Canva graphics, and sent weekly Mailchimp newsletters.</p>
     </div>
   </div>
+</section>
 
+<div class="divider"></div>
 
+<!-- SYSTEMS -->
+<section id="systems">
+  <div class="sec-label fade">Systems &amp; Products</div>
+  <div class="sec-title fade">Things I've built.</div>
+  <p class="sec-intro fade">Beyond the day-to-day, I direct the end-to-end build of the tools that run my programs — writing the requirements, business rules, and edge cases, then working with Claude AI to build, test, and deploy each system live. Screens below are recreations with placeholder data; the real systems run in production with live creator and payment records.</p>
+
+  <div class="case-study fade">
+    <div class="case-head">
+      <h3 class="case-name">NorthQuest — Creator Program Operations Platform</h3>
+      <div class="case-badges"><span class="badge">30+ person team</span><span class="badge badge-gold">8-week build</span></div>
+    </div>
+    <p class="case-detail">A full operations platform for the fintech's UGC program: a <strong>12-step onboarding flow with contract e-signature</strong>, a daily posting tracker that enforces a 2-posts/day cap by server timestamp and catches duplicate video links, an <strong>automated payment register</strong> calculated live from logged posts, and a data-integrity audit that finds hidden-Unicode name splits and orphaned records across the 99-profile database. Payment reminders go out through a one-tap WhatsApp flow. Also directed a live compensation-model migration from per-video rates to flat monthly salaries with no service interruption.</p>
+    <div class="ci-top">
+      <figure><img src="images/systems/nq_4_payments_audit.png" alt="NorthQuest payment register with data-integrity audit"><figcaption>Automated payment register — with the data-integrity audit flagging bad records</figcaption></figure>
+      <div class="ci-stack">
+        <figure><img src="images/systems/nq_1_onboarding.png" alt="NorthQuest onboarding contract e-signature"><figcaption>12-step onboarding — contract e-signature</figcaption></figure>
+        <figure><img src="images/systems/nq_2_database.png" alt="NorthQuest creator database with public/private field split"><figcaption>99-profile database — private fields sealed off</figcaption></figure>
+      </div>
+    </div>
+    <div class="ci-bottom">
+      <figure><img src="images/systems/nq_3_posting.png" alt="NorthQuest daily posting tracker"><figcaption>Posting tracker — duplicate-link detection, daily cap</figcaption></figure>
+      <figure><img src="images/systems/nq_5_whatsapp.png" alt="NorthQuest WhatsApp payment reminder"><figcaption>One-tap WhatsApp payment reminders</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="case-study fade">
+    <div class="case-head">
+      <h3 class="case-name">CashDrive — Creator Payroll &amp; Sales-Attribution System</h3>
+      <div class="case-badges"><span class="badge">Live in production</span><span class="badge badge-gold">Single-session build</span></div>
+    </div>
+    <p class="case-detail">A separate system for the automotive program, built around what makes car sales different: a <strong>vehicle-sale and bonus tracker</strong> that attributes each confirmed sale to the creator whose content brought the buyer in, with discretionary bonuses that stack into an <strong>auto-calculated payments register</strong> — no manual re-entry. Creator intake collects payment details and a typed contract signature in one four-step flow, and a WhatsApp help desk routes account and contract questions with pre-filled messages.</p>
+    <div class="ci-top">
+      <figure><img src="images/systems/cd_3_sales_tracker.png" alt="CashDrive vehicle sale and bonus tracker"><figcaption>Vehicle-sale &amp; bonus tracker — each sale attributed to a creator, bonus flowing to payroll</figcaption></figure>
+      <div class="ci-stack">
+        <figure><img src="images/systems/cd_1_onboarding.png" alt="CashDrive creator onboarding"><figcaption>Creator intake — payment details &amp; contract signing</figcaption></figure>
+        <figure><img src="images/systems/cd_2_roster.png" alt="CashDrive creator roster"><figcaption>Creator roster — earnings &amp; sales at a glance</figcaption></figure>
+      </div>
+    </div>
+    <div class="ci-bottom">
+      <figure><img src="images/systems/cd_4_payments.png" alt="CashDrive payments register"><figcaption>Payments register — bonuses auto-linked to confirmed sales</figcaption></figure>
+      <figure><img src="images/systems/cd_5_whatsapp.png" alt="CashDrive WhatsApp help desk"><figcaption>WhatsApp help desk — pre-filled creator support messages</figcaption></figure>
+    </div>
+  </div>
 </section>
 
 <div class="divider"></div>
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="contact-box">
-    <div>
+  <div class="contact-box fade">
+    <div style="position:relative; z-index:1;">
       <h2>Ready to work.</h2>
       <p>Remote · GMT+1 · Available now</p>
     </div>
@@ -407,11 +579,24 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 </footer>
 
 <script>
+// Scroll reveals with stagger
 const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    io.unobserve(e.target);
+  });
 }, { threshold: 0.08 });
-document.querySelectorAll('.fade').forEach(el => io.observe(el));
 
+document.querySelectorAll('.fade').forEach(el => {
+  // stagger siblings that share a parent grid/section
+  const siblings = [...el.parentElement.children].filter(c => c.classList.contains('fade'));
+  const idx = siblings.indexOf(el);
+  el.style.transitionDelay = (idx * 70) + 'ms';
+  io.observe(el);
+});
+
+// Count-up stats
 const numIO = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
