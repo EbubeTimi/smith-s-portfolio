@@ -49,11 +49,13 @@ nav {
 }
 
 .nav-name {
+  display: flex; align-items: center; gap: .6rem;
   font-weight: 800; font-size: 1rem;
   letter-spacing: -0.02em;
   color: var(--text);
   text-decoration: none;
 }
+.nav-avatar { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
 
 .nav-right { display: flex; align-items: center; gap: 1.5rem; }
 
@@ -200,8 +202,6 @@ h1 .accent { color: var(--navy); }
 .about-photo { margin: 1.7rem 0 0; }
 .about-photo img { width: 100%; display: block; border-radius: 14px; border: 1px solid var(--border); }
 .about-photo figcaption { font-size: .74rem; color: var(--faint); margin-top: .55rem; font-weight: 600; }
-.about-photo-secondary { margin-top: 1rem; }
-
 .testimonial { margin-top: 1rem; padding: .95rem 1.15rem; background: var(--surface); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; }
 .testimonial p { font-size: .85rem; font-style: italic; color: var(--text); margin: 0 0 .4rem; line-height: 1.65; }
 .testimonial cite { font-size: .76rem; color: var(--muted); font-style: normal; font-weight: 600; }
@@ -321,7 +321,7 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 <body>
 
 <nav>
-  <a class="nav-name" href="#">Smith Onyekwereh</a>
+  <a class="nav-name" href="#"><img src="images/systems/smith_headshot.jpg" alt="" class="nav-avatar">Smith Onyekwereh</a>
   <div class="nav-right">
     <a class="nav-link" href="#about">About</a>
     <a class="nav-link" href="#services">Services</a>
@@ -396,8 +396,7 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
   <div class="about-grid">
     <div>
       <h2 class="about-heading">I build the<br><em>systems</em><br>behind the work.</h2>
-      <figure class="about-photo"><img src="images/systems/smith_headshot.jpg" alt="Smith Onyekwereh"></figure>
-      <figure class="about-photo about-photo-secondary"><img src="images/systems/smith_hackathon.jpg" alt="Smith Onyekwereh at the JusticeTech Hackathon and Accelerator"><figcaption>At the JusticeTech Hackathon &amp; Accelerator</figcaption></figure>
+      <figure class="about-photo"><img src="images/systems/smith_hackathon.jpg" alt="Smith Onyekwereh at the JusticeTech Hackathon and Accelerator"><figcaption>At the JusticeTech Hackathon &amp; Accelerator</figcaption></figure>
     </div>
     <div class="about-text">
       <p>I'm a Virtual and Administrative Assistant, and AI, operations and automation are how I do the job better. Day to day I run two creator marketing programs, for NorthQuest Finance (a CBN-regulated fintech) and CashDrive (an automotive UGC program): recruitment, contracts, correspondence, payments, and reporting. When those programs needed real tooling, I specified and directed Claude AI through building it: onboarding flows, posting trackers, automated payment registers. Then I deployed and tested everything myself.</p>
