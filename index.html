@@ -200,6 +200,17 @@ h1 .accent { color: var(--navy); }
 .about-photo { margin: 1.7rem 0 0; }
 .about-photo img { width: 100%; display: block; border-radius: 14px; border: 1px solid var(--border); }
 .about-photo figcaption { font-size: .74rem; color: var(--faint); margin-top: .55rem; font-weight: 600; }
+.about-photo-secondary { margin-top: 1rem; }
+
+.testimonial { margin-top: 1rem; padding: .95rem 1.15rem; background: var(--surface); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; }
+.testimonial p { font-size: .85rem; font-style: italic; color: var(--text); margin: 0 0 .4rem; line-height: 1.65; }
+.testimonial cite { font-size: .76rem; color: var(--muted); font-style: normal; font-weight: 600; }
+
+.work-proof-row { display: flex; gap: .85rem; margin-top: 1.1rem; flex-wrap: wrap; }
+.work-proof-row figure { flex: 1; min-width: 220px; margin: 0; }
+.work-proof-row img, .work-proof img { width: 100%; display: block; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(17,17,17,.06); }
+.work-proof-row figcaption, .work-proof figcaption { font-size: .72rem; color: var(--faint); margin-top: .4rem; font-weight: 600; }
+.work-proof { margin-top: 1.1rem; max-width: 420px; }
 
 /* ── SERVICES ── */
 .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
@@ -323,7 +334,7 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 <!-- HERO -->
 <section class="hero">
   <h1 class="rise d2">Smith<br><span class="accent">Onyekwereh.</span></h1>
-  <p class="hero-sub rise d3">Virtual and Administrative Assistant with 18+ months of remote experience. I use <strong>AI, operations and automation</strong> to do the work better: I run creator programs, build the systems that run them with Claude and ChatGPT, and keep every workstream reported, documented, and moving.</p>
+  <p class="hero-sub rise d3">Virtual and Administrative Assistant with 18+ months of remote experience. I use <strong>AI, operations and automation</strong> to do the work better: I run creator programs, build the systems that run them with Claude Code, and keep every workstream reported, documented, and moving.</p>
   <div class="hero-ctas rise d4">
     <a class="btn btn-navy" href="mailto:smithonyekwereh1@gmail.com">Get in touch</a>
     <a class="btn btn-outline" href="https://linkedin.com/in/smithonyekwereh" target="_blank" rel="noopener">LinkedIn</a>
@@ -364,7 +375,7 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
       <div class="stat-label">Person remote team<br>supported daily</div>
     </div>
     <div class="stat fade">
-      <div class="stat-num" data-val="363" data-suf="K+">0</div>
+      <div class="stat-num" data-val="382" data-suf="K+">0</div>
       <div class="stat-label">Video views,<br>single piece</div>
     </div>
     <div class="stat fade">
@@ -385,7 +396,8 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
   <div class="about-grid">
     <div>
       <h2 class="about-heading">I build the<br><em>systems</em><br>behind the work.</h2>
-      <figure class="about-photo"><img src="images/systems/smith_hackathon.jpg" alt="Smith Onyekwereh at the JusticeTech Hackathon and Accelerator"><figcaption>At the JusticeTech Hackathon &amp; Accelerator</figcaption></figure>
+      <figure class="about-photo"><img src="images/systems/smith_headshot.jpg" alt="Smith Onyekwereh"></figure>
+      <figure class="about-photo about-photo-secondary"><img src="images/systems/smith_hackathon.jpg" alt="Smith Onyekwereh at the JusticeTech Hackathon and Accelerator"><figcaption>At the JusticeTech Hackathon &amp; Accelerator</figcaption></figure>
     </div>
     <div class="about-text">
       <p>I'm a Virtual and Administrative Assistant, and AI, operations and automation are how I do the job better. Day to day I run two creator marketing programs, for NorthQuest Finance (a CBN-regulated fintech) and CashDrive (an automotive UGC program): recruitment, contracts, correspondence, payments, and reporting. When those programs needed real tooling, I specified and directed Claude AI through building it: onboarding flows, posting trackers, automated payment registers. Then I deployed and tested everything myself.</p>
@@ -399,7 +411,6 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
         <span class="tag">Google Apps Script</span>
         <span class="tag">Remote-first</span>
         <span class="tag">Legal research</span>
-        <span class="tag">Yoruba / English</span>
       </div>
     </div>
   </div>
@@ -434,7 +445,7 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
     <div class="service fade">
       <span class="service-num">05</span>
       <div class="service-name">Video Creation &amp; AI Production</div>
-      <p class="service-body">AI-animated video production with Kling, Wan 2.1, and CapCut: scripting, generation, editing, captions, and Yoruba-English transcription. My highest-performing piece reached 363,000 views.</p>
+      <p class="service-body">AI-animated video production with Kling, Wan 2.1, and CapCut: scripting, generation, editing, captions, and Yoruba-English transcription. My highest-performing piece reached 382,000 views.</p>
     </div>
     <div class="service fade">
       <span class="service-num">06</span>
@@ -485,6 +496,7 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
     <div>
       <div class="work-role">University Research Assistant</div>
       <p class="work-detail">IP law research (copyright, trademarks, CMOs) for a PhD project at the University of Antwerp and Munich Intellectual Property Law Center. Built a 90+ contact stakeholder database across the US and Netherlands. Drafted memoranda, contracts, and Terms of Service independently.</p>
+      <div class="testimonial"><p>"Thank you for your kind words and your dedication to the project. Your contributions were invaluable, and I truly appreciate your hard work and enthusiasm."</p><cite>— Seun Lari-Williams, PhD Researcher</cite></div>
     </div>
   </div>
 
@@ -495,8 +507,13 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
     </div>
     <div>
       <div class="work-role">AI Video Content Manager</div>
-      <p class="work-detail">Produced and edited 9 AI-animated video segments using Kling, Wan 2.1, and CapCut. Highest single video: 363,000 views. Grew the channel from 108 to 10,000+ subscribers in under 9 months. Transcribed and translated Yoruba audio to English.</p>
-      <span class="badge badge-gold">363K views</span>
+      <p class="work-detail">Produced and edited 9 AI-animated video segments using Kling, Wan 2.1, and CapCut. Highest single video: 382,000 views. Grew the channel from 108 to 10,000+ subscribers in under 9 months. Transcribed and translated Yoruba audio to English.</p>
+      <span class="badge badge-gold">382K views</span><span class="badge">Yoruba · English translation</span>
+      <div class="testimonial"><p>"Thank you very much for the video. The images are amazingly beautiful. Welldone!"</p><cite>— Mrs Feyi, Aunty Akanke</cite></div>
+      <div class="work-proof-row">
+        <figure><img src="images/systems/proof_youtube_channel.jpg" alt="Tales with Aunty Akanke YouTube channel, 10.9K subscribers"><figcaption>Tales with Aunty Akanke — 10.9K subscribers, 23 videos</figcaption></figure>
+        <figure><img src="images/systems/proof_youtube_views.jpg" alt="Tales with Aunty Akanke video view counts, up to 382K views"><figcaption>Real view counts on the channel — up to 382K</figcaption></figure>
+      </div>
     </div>
   </div>
 
@@ -508,6 +525,7 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
     <div>
       <div class="work-role">Managing Editor &amp; Social Media Manager</div>
       <p class="work-detail">Grew the platform from 20 to 491 followers in 5 months. Published 150+ original posts, ran the platform's first open poetry contest, managed all inbox correspondence for 100+ monthly inquiries, created Canva graphics, and sent weekly Mailchimp newsletters.</p>
+      <figure class="work-proof"><img src="images/systems/proof_pidginpoetry.jpg" alt="Pidgin Poetry Instagram page"><figcaption>Pidgin Poetry on Instagram — @pidginpoetry</figcaption></figure>
     </div>
   </div>
 </section>
@@ -585,7 +603,6 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 </footer>
 
 <script>
-// Scroll reveals with stagger
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
@@ -595,14 +612,12 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 
 document.querySelectorAll('.fade').forEach(el => {
-  // stagger siblings that share a parent grid/section
   const siblings = [...el.parentElement.children].filter(c => c.classList.contains('fade'));
   const idx = siblings.indexOf(el);
   el.style.transitionDelay = (idx * 70) + 'ms';
   io.observe(el);
 });
 
-// Count-up stats
 const numIO = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
