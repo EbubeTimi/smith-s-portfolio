@@ -65,6 +65,7 @@ nav {
   transition: color .2s;
 }
 .nav-link:hover { color: var(--text); }
+.nav-link.active { color: var(--navy); font-weight: 700; }
 
 /* ── BUTTONS ── */
 .btn {
@@ -272,9 +273,37 @@ h1 .accent { color: var(--navy); }
   border: 1px solid var(--border);
   box-shadow: 0 2px 10px rgba(17,17,17,.05);
   transition: transform .3s ease, box-shadow .3s ease;
+  cursor: zoom-in;
 }
 .case-study figure:hover img { transform: translateY(-4px) scale(1.01); box-shadow: 0 18px 40px -14px rgba(17,17,17,.25); }
 .case-study figcaption { font-size: .74rem; color: var(--faint); margin-top: .55rem; line-height: 1.45; font-weight: 600; }
+.case-live-link { margin: .5rem 0 1.7rem; }
+.fig-link { color: var(--navy); text-decoration: none; border-bottom: 1px solid rgba(27,52,97,.35); font-weight: 700; }
+.fig-link:hover { color: var(--navy-2); border-color: var(--navy-2); }
+.fig-link .arrow { display: inline-block; transition: transform .18s; }
+.fig-link:hover .arrow { transform: translate(2px,-2px); }
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 300;
+  background: rgba(10,12,20,.92);
+  align-items: center; justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  cursor: zoom-out;
+}
+.lightbox.open { display: flex; }
+.lightbox-inner { max-width: min(1100px, 92vw); max-height: 90vh; display: flex; flex-direction: column; align-items: center; gap: .9rem; cursor: default; }
+.lightbox-inner img { max-width: 100%; max-height: 78vh; border-radius: 10px; box-shadow: 0 30px 80px -20px rgba(0,0,0,.6); }
+.lightbox-cap { color: rgba(255,255,255,.78); font-size: .85rem; font-weight: 600; text-align: center; max-width: 640px; }
+.lightbox-close {
+  position: absolute; top: clamp(1rem,3vw,2rem); right: clamp(1rem,3vw,2rem);
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25);
+  color: #fff; font-size: 1.3rem; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .18s;
+}
+.lightbox-close:hover { background: rgba(255,255,255,.2); }
 
 /* ── CONTACT ── */
 .contact-box {
@@ -334,7 +363,7 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 <!-- HERO -->
 <section class="hero">
   <h1 class="rise d2">Smith<br><span class="accent">Onyekwereh.</span></h1>
-  <p class="hero-sub rise d3">Virtual and Administrative Assistant with 18+ months of remote experience. I use <strong>AI, operations and automation</strong> to do the work better: I run creator programs, build the systems that run them with Claude Code, and keep every workstream reported, documented, and moving.</p>
+  <p class="hero-sub rise d3">Virtual and Administrative Assistant with two years of remote experience. I use <strong>AI, operations and automation</strong> to run creator programs and build the systems behind them with Claude Code.</p>
   <div class="hero-ctas rise d4">
     <a class="btn btn-navy" href="mailto:smithonyekwereh1@gmail.com">Get in touch</a>
     <a class="btn btn-outline" href="https://linkedin.com/in/smithonyekwereh" target="_blank" rel="noopener">LinkedIn</a>
@@ -542,16 +571,17 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
       <h3 class="case-name">NorthQuest · Creator Program Operations Platform</h3>
       <div class="case-badges"><span class="badge">30+ person team</span><span class="badge badge-gold">Continuously iterated</span></div>
     </div>
+    <a class="case-link case-live-link" href="https://smithstem.vercel.app" target="_blank" rel="noopener">Visit the live platform <span class="arrow">↗</span></a>
     <p class="case-detail">The operations platform behind the fintech's UGC program, built and then refined through round after round of iteration until the daily routine runs itself. Creators log posts through a tracker that enforces a 2-posts/day cap by server timestamp and catches duplicate video links. A <strong>12-step onboarding flow</strong> takes each new creator from welcome screen to signed contract. The <strong>payment register calculates every creator's pay live</strong> from logged posts, and the 99-profile database keeps private fields sealed away from the public app. The compensation model was migrated from per-video rates to flat monthly salaries with no service interruption.</p>
     <div class="ci-top">
-      <figure><img src="images/systems/nq_real_posting.png" alt="NorthQuest posting log where creators log daily videos"><figcaption>The posting log · creators log each day's videos here</figcaption></figure>
+      <figure><img src="images/systems/nq_real_posting.png" alt="NorthQuest posting log where creators log daily videos"><figcaption>The posting log · creators log each day's videos here — <a class="fig-link" href="https://smithstem.vercel.app/dashboard" target="_blank" rel="noopener">open it live<span class="arrow"> ↗</span></a></figcaption></figure>
       <div class="ci-stack">
         <figure><img src="images/systems/nq_dashboard.png" alt="NorthQuest admin dashboard"><figcaption>Admin dashboard · today at a glance</figcaption></figure>
-        <figure><img src="images/systems/nq_register.png" alt="NorthQuest payment register with totals"><figcaption>Payment register · salary, bonus and totals calculated live</figcaption></figure>
+        <figure><img src="images/systems/nq_register.png" alt="NorthQuest payment register with totals"><figcaption>Payment register · salary, bonus and totals calculated live — <a class="fig-link" href="https://smithstem.vercel.app/admin" target="_blank" rel="noopener">open the tracker<span class="arrow"> ↗</span></a></figcaption></figure>
       </div>
     </div>
     <div class="ci-bottom">
-      <figure><img src="images/systems/nq_real_welcome.png" alt="NorthQuest onboarding welcome screen"><figcaption>Onboarding · the welcome every new creator meets</figcaption></figure>
+      <figure><img src="images/systems/nq_real_welcome.png" alt="NorthQuest onboarding welcome screen"><figcaption>Onboarding · the welcome every new creator meets — <a class="fig-link" href="https://smithstem.vercel.app/onboarding" target="_blank" rel="noopener">start the flow<span class="arrow"> ↗</span></a></figcaption></figure>
       <figure><img src="images/systems/nq_real_details.png" alt="NorthQuest onboarding details step"><figcaption>Onboarding · details step, everything needed to set up and pay</figcaption></figure>
     </div>
     <div class="ci-bottom" style="margin-top:1rem;">
@@ -565,11 +595,12 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
       <h3 class="case-name">CashDrive · Creator Payroll &amp; Sales-Attribution System</h3>
       <div class="case-badges"><span class="badge">Live in production</span><span class="badge badge-gold">Single-session build</span></div>
     </div>
+    <a class="case-link case-live-link" href="https://ebubetimi.github.io/CashDrive/cashdrivepostinglog.html" target="_blank" rel="noopener">Visit the live platform <span class="arrow">↗</span></a>
     <p class="case-detail">A separate system for the automotive program, built around what makes car sales different: a <strong>vehicle-sale and bonus tracker</strong> that attributes each confirmed sale to the creator whose content brought the buyer in. Discretionary bonuses stack into an <strong>auto-calculated payments register</strong> with no manual re-entry. Creator intake collects payment details and a typed contract signature in one four-step flow, and a WhatsApp help desk routes account and contract questions with pre-filled messages.</p>
     <div class="ci-top">
-      <figure><img src="images/systems/cd_3_sales_tracker.png" alt="CashDrive vehicle sale and bonus tracker"><figcaption>Vehicle-sale &amp; bonus tracker · each sale attributed to a creator, bonus flowing to payroll</figcaption></figure>
+      <figure><img src="images/systems/cd_3_sales_tracker.png" alt="CashDrive vehicle sale and bonus tracker"><figcaption>Vehicle-sale &amp; bonus tracker · each sale attributed to a creator, bonus flowing to payroll — <a class="fig-link" href="https://ebubetimi.github.io/CashDrive/cashdrivepostinglog.html" target="_blank" rel="noopener">open the tracker<span class="arrow"> ↗</span></a></figcaption></figure>
       <div class="ci-stack">
-        <figure><img src="images/systems/cd_1_onboarding.png" alt="CashDrive creator onboarding"><figcaption>Creator intake · payment details &amp; contract signing</figcaption></figure>
+        <figure><img src="images/systems/cd_1_onboarding.png" alt="CashDrive creator onboarding"><figcaption>Creator intake · payment details &amp; contract signing — <a class="fig-link" href="https://ebubetimi.github.io/CashDrive/cashdriveintake.html" target="_blank" rel="noopener">start the flow<span class="arrow"> ↗</span></a></figcaption></figure>
         <figure><img src="images/systems/cd_2_roster.png" alt="CashDrive creator roster"><figcaption>Creator roster · earnings &amp; sales at a glance</figcaption></figure>
       </div>
     </div>
@@ -600,6 +631,14 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 <footer>
   &copy; 2026 Smith Onyekwereh &nbsp;&middot;&nbsp; Remote, GMT+1
 </footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image">&times;</button>
+  <div class="lightbox-inner">
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-cap" id="lightbox-cap"></div>
+  </div>
+</div>
 
 <script>
 const io = new IntersectionObserver(entries => {
@@ -635,6 +674,41 @@ const numIO = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-val]').forEach(el => numIO.observe(el));
+
+/* ── ACTIVE NAV LINK ON SCROLL ── */
+const navLinks = document.querySelectorAll('.nav-link');
+const navSections = ['about', 'services', 'work', 'systems']
+  .map(id => document.getElementById(id))
+  .filter(Boolean);
+const navIO = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const id = entry.target.id;
+    navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + id));
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+navSections.forEach(sec => navIO.observe(sec));
+
+/* ── LIGHTBOX FOR SYSTEM SCREENSHOTS ── */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCap = document.getElementById('lightbox-cap');
+function openLightbox(img) {
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+  lightboxCap.textContent = img.alt;
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.case-study figure img').forEach(img => {
+  img.addEventListener('click', () => openLightbox(img));
+});
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
