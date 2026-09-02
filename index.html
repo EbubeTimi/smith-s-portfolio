@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smith Onyekwereh · Virtual &amp; Administrative Assistant · AI Operations</title>
-<meta name="description" content="Smith Onyekwereh is a Virtual and Administrative Assistant who uses AI, operations and automation to build the systems behind remote teams. Available for remote work globally.">
+<title>Smith Onyekwereh · Operations &amp; Administrative Manager · Barrister-at-Law</title>
+<meta name="description" content="Smith Onyekwereh builds operation systems for businesses. Operations &amp; Administrative Manager, Barrister-at-Law, and AI-animated video creator. Available for remote work globally.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231B3461'/%3E%3Ctext x='50' y='68' font-family='Arial,Helvetica,sans-serif' font-size='52' font-weight='800' fill='%23C08B2B' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://ebubetimi.github.io/smith-s-portfolio/">
-<meta property="og:title" content="Smith Onyekwereh · Virtual &amp; Administrative Assistant · AI Operations">
-<meta property="og:description" content="Smith Onyekwereh is a Virtual and Administrative Assistant who uses AI, operations and automation to build the systems behind remote teams. Available for remote work globally.">
+<meta property="og:title" content="Smith Onyekwereh · Operations &amp; Administrative Manager · Barrister-at-Law">
+<meta property="og:description" content="Smith Onyekwereh builds operation systems for businesses. Operations &amp; Administrative Manager, Barrister-at-Law, and AI-animated video creator. Available for remote work globally.">
 <meta property="og:image" content="https://ebubetimi.github.io/smith-s-portfolio/images/systems/smith_headshot.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Smith Onyekwereh · Virtual &amp; Administrative Assistant · AI Operations">
-<meta name="twitter:description" content="Smith Onyekwereh is a Virtual and Administrative Assistant who uses AI, operations and automation to build the systems behind remote teams. Available for remote work globally.">
+<meta name="twitter:title" content="Smith Onyekwereh · Operations &amp; Administrative Manager · Barrister-at-Law">
+<meta name="twitter:description" content="Smith Onyekwereh builds operation systems for businesses. Operations &amp; Administrative Manager, Barrister-at-Law, and AI-animated video creator. Available for remote work globally.">
 <meta name="twitter:image" content="https://ebubetimi.github.io/smith-s-portfolio/images/systems/smith_headshot.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +51,13 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Hanken Grotesk', sans-serif;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 900px 500px at 8% 0%, rgba(27,52,97,.035), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 95% 15%, rgba(192,139,43,.045), transparent 55%),
+    radial-gradient(ellipse 1000px 700px at 50% 100%, rgba(92,74,34,.03), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -152,9 +158,14 @@ h1 {
 }
 h1 .accent { color: var(--navy); }
 
+.hero-credential {
+  font-size: .85rem; font-weight: 700; color: var(--navy);
+  text-transform: uppercase; letter-spacing: .08em;
+  margin-bottom: .9rem;
+}
 .hero-sub {
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  color: var(--muted); max-width: 620px; line-height: 1.75;
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  color: var(--text); font-weight: 600; max-width: 560px; line-height: 1.5;
   margin-bottom: 2.5rem;
 }
 .hero-sub strong { color: var(--text); font-weight: 700; }
@@ -181,22 +192,13 @@ h1 .accent { color: var(--navy); }
 }
 .pillar::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; }
 .pillar-ops::before      { background: var(--navy); }
-.pillar-law::before      { background: linear-gradient(90deg, var(--gold), var(--law-ink)); }
-.pillar-creative::before { background: linear-gradient(90deg, var(--gold), var(--ink)); }
+.pillar-law::before      { background: var(--law-ink); }
+.pillar-creative::before { background: var(--gold); }
 .pillar:hover { transform: translateY(-5px); box-shadow: 0 22px 44px -22px rgba(17,17,17,.28); border-color: transparent; }
-
-.pillar-mark { height: 32px; display: flex; align-items: center; }
-.pillar-mark-ops { display: grid; grid-template-columns: repeat(2,9px); grid-template-rows: repeat(2,9px); gap: 4px; }
-.pillar-mark-ops i { background: var(--navy); border-radius: 2px; display: block; }
-.pillar-mark-law { font-family: 'Source Serif 4', Georgia, serif; font-size: 2.1rem; font-weight: 600; color: var(--law-ink); line-height: 1; }
-.pillar-mark-creative { width: 0; height: 0; border-top: 9px solid transparent; border-bottom: 9px solid transparent; border-left: 15px solid var(--navy); }
 
 .pillar-eyebrow { font-size: .7rem; font-weight: 800; color: var(--faint); letter-spacing: .14em; }
 .pillar-name { font-size: 1.5rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.14; }
 .pillar-body { font-size: .86rem; color: var(--muted); line-height: 1.65; flex: 1; }
-.pillar-cta { font-size: .78rem; font-weight: 700; color: var(--navy); display: inline-flex; align-items: center; gap: .3rem; margin-top: .3rem; }
-.pillar-cta .arrow { display: inline-block; transition: transform .2s; }
-.pillar:hover .pillar-cta .arrow { transform: translateY(3px); }
 
 /* ── MARQUEE ── */
 .marquee-wrap {
@@ -482,40 +484,33 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 <!-- HERO -->
 <section class="hero">
   <h1 class="rise d2">Smith<br><span class="accent">Onyekwereh.</span></h1>
-  <p class="hero-sub rise d3">Virtual and Administrative Assistant with two-plus years of remote experience. I use <strong>AI, operations and automation</strong> to do the work better: I run creator programs, build the systems that run them with Claude Code, and keep every workstream reported, documented, and moving.</p>
+  <p class="hero-credential rise d3">Operations &amp; Administrative Manager · Barrister-at-Law</p>
+  <p class="hero-sub rise d3">I build operation systems for businesses.</p>
   <div class="hero-ctas rise d4">
     <a class="btn btn-navy" href="mailto:smithonyekwereh1@gmail.com">Get in touch</a>
-    <a class="btn btn-outline" href="Smith%20Onyekwereh%20CV%20(Executive%20Assistant).pdf" target="_blank" rel="noopener">Download CV</a>
-    <a class="btn btn-outline" href="https://linkedin.com/in/smithonyekwereh" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </section>
 
 <!-- PILLARS -->
 <section id="pillars">
-  <div class="sec-label fade">How I work</div>
-  <div class="sec-title fade" style="margin-bottom:1rem;">Three sides,<br>one operator.</div>
-  <p class="sec-intro fade" style="margin-top:0;">I don't keep these in separate lanes. The same person runs a fintech's creator payroll, drafted IP research memoranda in Belgium, and grew a YouTube channel to 10K subscribers with AI-animated video. Pick a side to start.</p>
+  <div class="sec-label fade">Three sides</div>
+  <div class="sec-title fade" style="margin-bottom:1rem;">Pick a side.</div>
+  <p class="sec-intro fade" style="margin-top:0;">I build operation systems for businesses. I'm also a called Barrister-at-Law, and I make AI-animated video on the side. All three are below.</p>
   <div class="pillars">
     <a class="pillar pillar-ops fade" href="#operations">
-      <div class="pillar-mark pillar-mark-ops"><i></i><i></i><i></i><i></i></div>
       <div class="pillar-eyebrow">01</div>
-      <div class="pillar-name">Operations<br>&amp; AI</div>
-      <p class="pillar-body">Creator programs, payroll and posting-compliance systems — directed and built with Claude AI, deployed live.</p>
-      <span class="pillar-cta">Enter <span class="arrow">↓</span></span>
+      <div class="pillar-name">AI &amp;<br>Operations</div>
+      <p class="pillar-body">Creator-programme operations, contractor agreements and payment systems, built and directed with Claude AI.</p>
     </a>
     <a class="pillar pillar-law fade" href="#law">
-      <div class="pillar-mark pillar-mark-law">§</div>
       <div class="pillar-eyebrow">02</div>
       <div class="pillar-name">Law</div>
-      <p class="pillar-body">IP research, contract drafting and legal memoranda, from doctoral research to live commercial agreements.</p>
-      <span class="pillar-cta">Enter <span class="arrow">↓</span></span>
+      <p class="pillar-body">Barrister-at-Law, called July 2026. Legal externship, law clinic advocacy, a moot court win, and IP research in Belgium.</p>
     </a>
     <a class="pillar pillar-creative fade" href="#creative">
-      <div class="pillar-mark pillar-mark-creative"></div>
       <div class="pillar-eyebrow">03</div>
       <div class="pillar-name">Creative<br>&amp; AI Video</div>
       <p class="pillar-body">AI-animated video production and social platforms grown from zero — 382K views on a single piece.</p>
-      <span class="pillar-cta">Enter <span class="arrow">↓</span></span>
     </a>
   </div>
 </section>
@@ -546,12 +541,12 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
       <div class="stat-label">Live systems<br>directed &amp; deployed</div>
     </div>
     <div class="stat fade">
-      <div class="stat-num" data-val="99" data-suf="+">0</div>
+      <div class="stat-num" data-val="100" data-suf="+">0</div>
       <div class="stat-label">Creator profiles<br>built &amp; managed</div>
     </div>
     <div class="stat fade">
-      <div class="stat-num" data-val="30" data-suf="+">0</div>
-      <div class="stat-label">Person remote team<br>supported daily</div>
+      <div class="stat-num" data-val="100" data-suf="+">0</div>
+      <div class="stat-label">Person creator programme<br>run day to day</div>
     </div>
     <div class="stat fade">
       <div class="stat-num" data-val="382" data-suf="K+">0</div>
@@ -578,17 +573,17 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
       <figure class="about-photo"><img src="images/systems/smith_hackathon.jpg" alt="Smith Onyekwereh at the JusticeTech Hackathon and Accelerator"><figcaption>At the JusticeTech Hackathon &amp; Accelerator</figcaption></figure>
     </div>
     <div class="about-text">
-      <p>I'm a Virtual and Administrative Assistant, and AI, operations and automation are how I do the job better. Day to day I run two creator marketing programs, for NorthQuest Finance (a CBN-regulated fintech) and CashDrive (an automotive UGC program): recruitment, contracts, correspondence, payments, and reporting. When those programs needed real tooling, I specified and directed Claude AI through building it: onboarding flows, posting trackers, automated payment registers. Then I deployed and tested everything myself.</p>
-      <p>I like problems that do not have an obvious system yet. I like creating systems, organizing things, and finding what's repetitive so it can be simplified or done away with. Give me something scattered and I will build the structure. Underneath it all: a law degree, IP research for a PhD project in Belgium, and an AI-animated YouTube channel grown from scratch — the three sides below.</p>
+      <p>I build operation systems for businesses. Day to day that means running NorthQuest Finance's 100+ person creator programme (a CBN-regulated fintech): contractor agreements, correspondence, payments, and reporting. When the programme needed real tooling, I specified and directed Claude AI through building Smithstem, the platform behind it: onboarding flows, posting trackers, a payment register that cut the monthly close from days to minutes. Then I deployed and tested it myself.</p>
+      <p>I like problems that do not have an obvious system yet. I like creating systems, organizing things, and finding what's repetitive so it can be simplified or done away with. Give me something scattered and I will build the structure. Underneath it all: a Bar call, IP research for a PhD project in Belgium, and an AI-animated YouTube channel grown from scratch — the three sides below.</p>
       <div class="tags">
-        <span class="tag">Virtual assistance</span>
+        <span class="tag">Operations management</span>
         <span class="tag">AI operations</span>
         <span class="tag">Process automation</span>
         <span class="tag">Claude &amp; ChatGPT</span>
         <span class="tag">SOP design</span>
-        <span class="tag">Google Apps Script</span>
+        <span class="tag">Contract drafting</span>
         <span class="tag">Remote-first</span>
-        <span class="tag">Legal research</span>
+        <span class="tag">Barrister-at-Law</span>
       </div>
     </div>
   </div>
@@ -598,9 +593,9 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 
 <!-- ============ CHAPTER 01 — OPERATIONS & AI ============ -->
 <section id="operations" class="chapter chapter-ops">
-  <div class="chapter-eyebrow fade">01 — Operations &amp; AI</div>
+  <div class="chapter-eyebrow fade">01 — AI &amp; Operations</div>
   <div class="chapter-title fade">Run the program.<br>Build what runs it.</div>
-  <p class="sec-intro fade" style="margin-top:0;">Two live creator-marketing programs, and the operations platforms behind them — specified, directed, and shipped by me with Claude AI.</p>
+  <p class="sec-intro fade" style="margin-top:0;">The creator-marketing programs I run day to day, and Smithstem, the operations platform I direct the build of to run them — specified, directed, and shipped with Claude AI.</p>
 
   <div class="services fade" style="margin-bottom:3rem;">
     <div class="service">
@@ -627,10 +622,10 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
         <div class="work-org">NorthQuest Finance</div>
       </div>
       <div>
-        <div class="work-role">Creator Program Administrative Manager</div>
-        <p class="work-detail">Run a UGC creator marketing program for a CBN-regulated fintech: recruitment pipelines, contract review and revision, a 99-profile creator database, payment tracking, and all stakeholder correspondence for a 30+ person remote team. Directed the build of the program's full operations platform using Claude AI, covering onboarding, posting-compliance tracking, and an automated payment register.</p>
+        <div class="work-role">Operations &amp; Administrative Manager</div>
+        <p class="work-detail">Reporting to the Head of Product. Coordinate day-to-day operations for a 100+ person creator programme at a CBN-regulated fintech: drafted and managed the contractor agreements end to end (IP licensing, performance terms, termination, dispute resolution), reviewed commercial agreements and governance documentation, and directed the specification of Smithstem, the operations platform that cut the monthly payment close from days to minutes. Wrote the SOPs that let onboarding run without me in the room.</p>
         <span class="badge">Current</span>
-        <div><a class="case-link" href="#nq-system">See the system built for this program ↓</a></div>
+        <div><a class="case-link" href="#nq-system">See Smithstem, the platform built for this program ↓</a></div>
       </div>
     </div>
 
@@ -654,11 +649,11 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 
     <div class="case-study fade" id="nq-system">
       <div class="case-head">
-        <h3 class="case-name">NorthQuest · Creator Program Operations Platform</h3>
-        <div class="case-badges"><span class="badge">30+ person team</span><span class="badge badge-gold">Continuously iterated</span></div>
+        <h3 class="case-name">Smithstem · Creator Operations Platform</h3>
+        <div class="case-badges"><span class="badge">100+ person programme</span><span class="badge badge-gold">Continuously iterated</span></div>
       </div>
       <a class="case-link case-live-link" href="https://smithstem.vercel.app" target="_blank" rel="noopener">Visit the live platform <span class="arrow">↗</span></a>
-      <p class="case-detail">The operations platform behind the fintech's UGC program, built and then refined through round after round of iteration until the daily routine runs itself. Creators log posts through a tracker that enforces a 2-posts/day cap by server timestamp and catches duplicate video links. A <strong>12-step onboarding flow</strong> takes each new creator from welcome screen to signed contract. The <strong>payment register calculates every creator's pay live</strong> from logged posts, and the 99-profile database keeps private fields sealed away from the public app. The compensation model was migrated from per-video rates to flat monthly salaries with no service interruption.</p>
+      <p class="case-detail">The operations platform behind NorthQuest's creator programme, built on Next.js, Supabase and Vercel, and refined through round after round of iteration until the daily routine runs itself. Creators log posts through a tracker that enforces a 2-posts/day cap by server timestamp and catches duplicate video links. A <strong>12-step onboarding flow</strong> takes each new creator from welcome screen to signed contract. The <strong>payment register calculates every creator's pay live</strong> from logged posts and cut the monthly payment close from days to minutes, and the 100+ profile database keeps private fields sealed away from the public app. The compensation model was migrated from per-video rates to flat monthly salaries with no service interruption.</p>
       <div class="ci-top">
         <figure><img src="images/systems/nq_real_posting.png" alt="NorthQuest posting log where creators log daily videos"><figcaption>The posting log · creators log each day's videos here</figcaption></figure>
         <div class="ci-stack">
@@ -702,10 +697,44 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 <section id="law" class="chapter chapter-law">
   <div class="chapter-eyebrow fade">02 — Law</div>
   <div class="chapter-title fade">Trained to read<br>the fine print.</div>
-  <p class="sec-intro fade" style="margin-top:0;">A law degree underneath everything else here: IP research at doctoral level, contracts and Terms of Service drafted independently, and the same instinct for structure applied to case law instead of creator databases.</p>
+  <p class="sec-intro fade" style="margin-top:0;">Called to the Nigerian Bar on 8 July 2026, Nigerian Law School, Yola Campus. Everything below is what got me there and what I've done since: an externship, community legal advocacy, a moot court win, IP research in Belgium, and a legal-tech startup.</p>
   <div class="law-rule fade"></div>
 
   <div class="work-list">
+    <div class="work-row fade">
+      <div>
+        <div class="work-period">Sep – Oct 2025</div>
+        <div class="work-org">Deji Adeyanju &amp; Partners · Abuja</div>
+      </div>
+      <div>
+        <div class="work-role">Legal Extern</div>
+        <p class="work-detail">Prepared case files and drafted legal briefs, court submissions, and professional correspondence. Observed civil and criminal proceedings before Nigerian superior courts and managed file organisation for active matters.</p>
+      </div>
+    </div>
+
+    <div class="work-row fade">
+      <div>
+        <div class="work-period">Jul – Dec 2025</div>
+        <div class="work-org">Nigerian Law School, Yola Campus</div>
+      </div>
+      <div>
+        <div class="work-role">Law Clinic &amp; Moot Court Team</div>
+        <p class="work-detail">Served on the Law Clinic's Stakeholders Committee for a community legal awareness project in Wuro-Hausa: co-directed a community sensitisation drama on children's rights and education, and helped organise a stakeholders conference on women's rights and child education. Separately researched case law and drafted pleadings for the Moot &amp; Mock Trial team — the team won.</p>
+        <span class="badge badge-gold">Moot court win</span>
+      </div>
+    </div>
+
+    <div class="work-row fade">
+      <div>
+        <div class="work-period">Jun – Dec 2025</div>
+        <div class="work-org">JusticeConnect Nigeria</div>
+      </div>
+      <div>
+        <div class="work-role">Co-Founder</div>
+        <p class="work-detail">Co-built an early-stage WhatsApp-based legal inquiry chatbot and digital reporting platform, translating Nigerian legal frameworks into workflows non-lawyers could use. Presented it at the JusticeTechNG hackathon, then exited the accelerator early to complete Law School.</p>
+      </div>
+    </div>
+
     <div class="work-row fade">
       <div>
         <div class="work-period">Oct 2024 – Mar 2025</div>
@@ -721,9 +750,9 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 
   <div class="services services-1 fade" style="margin-top:2.5rem;">
     <div class="service">
-      <span class="service-num">03</span>
-      <div class="service-name">Legal &amp; Academic Research</div>
-      <p class="service-body">Case law analysis, contract review and drafting, legal memoranda, and structured research databases, built across doctoral-level IP research, a global law firm's pro bono programme, and live commercial contracts.</p>
+      <span class="service-num">04</span>
+      <div class="service-name">Legal Research &amp; Drafting</div>
+      <p class="service-body">Case-law analysis, contract review and drafting, legal memoranda, court submissions, and structured research databases — from doctoral-level IP research to a legal externship and live commercial contracts.</p>
     </div>
   </div>
 </section>
@@ -769,12 +798,12 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 
   <div class="services services-2 fade" style="margin-top:1rem;">
     <div class="service">
-      <span class="service-num">04</span>
+      <span class="service-num">05</span>
       <div class="service-name">Social Media Management</div>
       <p class="service-body">Editorial calendars, audience growth, community engagement, and full inbox handling. I grew Pidgin Poetry from 20 to 491 followers, published 150+ posts, and answered 100+ inquiries a month.</p>
     </div>
     <div class="service">
-      <span class="service-num">05</span>
+      <span class="service-num">06</span>
       <div class="service-name">Video Creation &amp; AI Production</div>
       <p class="service-body">AI-animated video production with Kling, Wan 2.1, and CapCut: scripting, generation, editing, captions, and Yoruba-English transcription. My highest-performing piece reached 382,000 views.</p>
     </div>
@@ -804,6 +833,7 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
       <a class="btn btn-white" href="mailto:smithonyekwereh1@gmail.com">smithonyekwereh1@gmail.com</a>
       <a class="btn btn-ghost" href="https://linkedin.com/in/smithonyekwereh" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn btn-ghost" href="https://wa.me/2349076217386" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-ghost" href="Smith%20Onyekwereh%20CV%20(Executive%20Assistant).pdf" target="_blank" rel="noopener">Download CV</a>
     </div>
   </div>
 </section>
