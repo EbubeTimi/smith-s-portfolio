@@ -17,7 +17,7 @@
 <meta name="twitter:image" content="https://ebubetimi.github.io/smith-s-portfolio/images/systems/smith_headshot.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&amp;display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:      #FAFAF7;
@@ -31,6 +31,18 @@
   --border:  #E0DEDA;
   --white:   #FFFFFF;
   --radius:  12px;
+
+  /* law chapter */
+  --law-surface: #F5F0E6;
+  --law-ink:     #5C4A22;
+  --law-rule:    #C9BFA8;
+
+  /* creative chapter (dark zone) */
+  --ink:       #10162A;
+  --ink-2:     #161D35;
+  --on-ink:    rgba(255,255,255,.92);
+  --on-ink-mu: rgba(255,255,255,.62);
+  --on-ink-bd: rgba(255,255,255,.14);
 }
 
 *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
@@ -75,6 +87,7 @@ nav {
   transition: color .2s;
 }
 .nav-link:hover { color: var(--text); }
+.nav-link.active { color: var(--navy); font-weight: 700; }
 
 /* ── BUTTONS ── */
 .btn {
@@ -156,6 +169,35 @@ h1 .accent { color: var(--navy); }
 .hero .rise.d4 { animation-delay: .5s; }
 @keyframes rise { to { opacity: 1; transform: none; } }
 
+/* ── PILLARS ── */
+#pillars { padding-top: 1rem; }
+.pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: .5rem; }
+.pillar {
+  display: flex; flex-direction: column; align-items: flex-start; gap: .7rem;
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 2rem 1.6rem 1.8rem; text-decoration: none; color: var(--text);
+  position: relative; overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.pillar::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; }
+.pillar-ops::before      { background: var(--navy); }
+.pillar-law::before      { background: linear-gradient(90deg, var(--gold), var(--law-ink)); }
+.pillar-creative::before { background: linear-gradient(90deg, var(--gold), var(--ink)); }
+.pillar:hover { transform: translateY(-5px); box-shadow: 0 22px 44px -22px rgba(17,17,17,.28); border-color: transparent; }
+
+.pillar-mark { height: 32px; display: flex; align-items: center; }
+.pillar-mark-ops { display: grid; grid-template-columns: repeat(2,9px); grid-template-rows: repeat(2,9px); gap: 4px; }
+.pillar-mark-ops i { background: var(--navy); border-radius: 2px; display: block; }
+.pillar-mark-law { font-family: 'Source Serif 4', Georgia, serif; font-size: 2.1rem; font-weight: 600; color: var(--law-ink); line-height: 1; }
+.pillar-mark-creative { width: 0; height: 0; border-top: 9px solid transparent; border-bottom: 9px solid transparent; border-left: 15px solid var(--navy); }
+
+.pillar-eyebrow { font-size: .7rem; font-weight: 800; color: var(--faint); letter-spacing: .14em; }
+.pillar-name { font-size: 1.5rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.14; }
+.pillar-body { font-size: .86rem; color: var(--muted); line-height: 1.65; flex: 1; }
+.pillar-cta { font-size: .78rem; font-weight: 700; color: var(--navy); display: inline-flex; align-items: center; gap: .3rem; margin-top: .3rem; }
+.pillar-cta .arrow { display: inline-block; transition: transform .2s; }
+.pillar:hover .pillar-cta .arrow { transform: translateY(3px); }
+
 /* ── MARQUEE ── */
 .marquee-wrap {
   border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
@@ -218,12 +260,24 @@ h1 .accent { color: var(--navy); }
 
 .work-proof-row { display: flex; gap: .85rem; margin-top: 1.1rem; flex-wrap: wrap; }
 .work-proof-row figure { flex: 1; min-width: 220px; margin: 0; }
-.work-proof-row img, .work-proof img { width: 100%; display: block; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(17,17,17,.06); }
+.work-proof-row img, .work-proof img { width: 100%; display: block; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(17,17,17,.06); cursor: zoom-in; }
 .work-proof-row figcaption, .work-proof figcaption { font-size: .72rem; color: var(--faint); margin-top: .4rem; font-weight: 600; }
 .work-proof { margin-top: 1.1rem; max-width: 420px; }
 
+/* ── CHAPTER HEADERS ── */
+.chapter-eyebrow {
+  display: inline-flex; align-items: center;
+  font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+  padding: .4rem .9rem; border-radius: 100px;
+  margin-bottom: 1.1rem;
+}
+.chapter-ops .chapter-eyebrow { background: var(--navy); color: #fff; }
+.chapter-title { font-size: clamp(1.9rem, 4.5vw, 2.7rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.06; margin-bottom: 1.1rem; }
+
 /* ── SERVICES ── */
 .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.services-2 { grid-template-columns: repeat(2, 1fr); }
+.services-1 { grid-template-columns: 1fr; max-width: 460px; }
 .service {
   background: var(--white); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 1.8rem;
@@ -238,13 +292,13 @@ h1 .accent { color: var(--navy); }
 .service-name { font-size: 1.06rem; font-weight: 800; letter-spacing: -.015em; margin-bottom: .55rem; }
 .service-body { font-size: .875rem; color: var(--muted); line-height: 1.68; }
 
-/* ── WORK ── */
+/* ── WORK ROWS (reused inside Operations / Law / Creative) ── */
 .work-row {
   display: grid; grid-template-columns: 175px 1fr;
   gap: 2.5rem; padding: 2.1rem 0; border-top: 1px solid var(--border);
   transition: background .25s;
 }
-.work-row:last-of-type { border-bottom: 1px solid var(--border); }
+.work-list .work-row:last-of-type { border-bottom: 1px solid var(--border); }
 .work-period { font-size: .8rem; color: var(--muted); font-weight: 600; padding-top: .2rem; }
 .work-org { font-size: .8rem; color: var(--faint); margin-top: .3rem; font-weight: 500; }
 .work-role { font-size: 1.12rem; font-weight: 800; letter-spacing: -.015em; margin-bottom: .5rem; }
@@ -262,6 +316,11 @@ h1 .accent { color: var(--navy); }
   border-bottom: 2px solid transparent; transition: border-color .2s;
 }
 .case-link:hover { border-color: var(--navy); }
+.case-live-link { margin: .5rem 0 1.7rem; }
+.fig-link { color: var(--navy); text-decoration: none; border-bottom: 1px solid rgba(27,52,97,.35); font-weight: 700; }
+.fig-link:hover { color: var(--navy-2); border-color: var(--navy-2); }
+.fig-link .arrow { display: inline-block; transition: transform .18s; }
+.fig-link:hover .arrow { transform: translate(2px,-2px); }
 
 /* ── SYSTEMS / CASE STUDIES ── */
 .case-study { padding: 3rem 0; border-top: 1px solid var(--border); }
@@ -282,9 +341,85 @@ h1 .accent { color: var(--navy); }
   border: 1px solid var(--border);
   box-shadow: 0 2px 10px rgba(17,17,17,.05);
   transition: transform .3s ease, box-shadow .3s ease;
+  cursor: zoom-in;
 }
 .case-study figure:hover img { transform: translateY(-4px) scale(1.01); box-shadow: 0 18px 40px -14px rgba(17,17,17,.25); }
 .case-study figcaption { font-size: .74rem; color: var(--faint); margin-top: .55rem; line-height: 1.45; font-weight: 600; }
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 300;
+  background: rgba(10,12,20,.92);
+  align-items: center; justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  cursor: zoom-out;
+}
+.lightbox.open { display: flex; }
+.lightbox-inner { max-width: min(1100px, 92vw); max-height: 90vh; display: flex; flex-direction: column; align-items: center; gap: .9rem; cursor: default; }
+.lightbox-inner img { max-width: 100%; max-height: 78vh; border-radius: 10px; box-shadow: 0 30px 80px -20px rgba(0,0,0,.6); }
+.lightbox-cap { color: rgba(255,255,255,.78); font-size: .85rem; font-weight: 600; text-align: center; max-width: 640px; }
+.lightbox-close {
+  position: absolute; top: clamp(1rem,3vw,2rem); right: clamp(1rem,3vw,2rem);
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25);
+  color: #fff; font-size: 1.3rem; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .18s;
+}
+.lightbox-close:hover { background: rgba(255,255,255,.2); }
+
+/* ── LAW CHAPTER ── */
+.chapter-law-wrap { background: var(--law-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.chapter-law .chapter-eyebrow { background: var(--law-ink); color: #fff; }
+.chapter-law .chapter-title { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; letter-spacing: -.01em; }
+.chapter-law .sec-intro { color: #6b6152; }
+.law-rule { height: 1px; background: var(--law-rule); margin: .5rem 0 2.2rem; position: relative; }
+.law-rule::before, .law-rule::after { content:''; position:absolute; top:-3px; width:1px; height:7px; background: var(--law-rule); }
+.law-rule::before { left: 0; }
+.law-rule::after { right: 0; }
+.chapter-law .work-row { border-color: var(--law-rule); }
+.chapter-law .work-role { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; }
+.chapter-law .service { border-color: var(--law-rule); }
+.chapter-law .service:hover { border-color: var(--law-ink); box-shadow: 0 14px 34px -16px rgba(92,74,34,.25); }
+.chapter-law .tag { border-color: var(--law-rule); }
+.chapter-law .tag:hover { border-color: var(--law-ink); }
+.chapter-law .testimonial { background: rgba(255,255,255,.55); border-left-color: var(--law-ink); }
+
+/* ── CREATIVE CHAPTER (dark) ── */
+.chapter-creative-wrap { background: linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%); }
+.chapter-creative .chapter-eyebrow { background: var(--gold); color: var(--ink); }
+.chapter-creative .chapter-title { color: var(--on-ink); }
+.chapter-creative .sec-intro { color: var(--on-ink-mu); }
+.chapter-creative .work-row { border-color: var(--on-ink-bd); }
+.chapter-creative .work-role, .chapter-creative .work-period { color: var(--on-ink); }
+.chapter-creative .work-org { color: var(--on-ink-mu); }
+.chapter-creative .work-detail { color: var(--on-ink-mu); }
+.chapter-creative .badge { background: rgba(255,255,255,.1); color: var(--on-ink); }
+.chapter-creative .badge-gold { background: rgba(192,139,43,.22); color: var(--gold); }
+.chapter-creative .work-proof-row img, .chapter-creative .work-proof img { border-color: var(--on-ink-bd); }
+.chapter-creative .work-proof-row figcaption, .chapter-creative .work-proof figcaption { color: var(--on-ink-mu); }
+.chapter-creative .testimonial { background: rgba(255,255,255,.06); border-left-color: var(--gold); }
+.chapter-creative .testimonial p { color: var(--on-ink); }
+.chapter-creative .testimonial cite { color: var(--on-ink-mu); }
+.chapter-creative .service { background: rgba(255,255,255,.05); border-color: var(--on-ink-bd); }
+.chapter-creative .service:hover { border-color: var(--gold); box-shadow: 0 14px 34px -16px rgba(0,0,0,.5); }
+.chapter-creative .service-name { color: var(--on-ink); }
+.chapter-creative .service-body { color: var(--on-ink-mu); }
+.chapter-creative .tag { background: rgba(255,255,255,.06); border-color: var(--on-ink-bd); color: var(--on-ink); }
+.chapter-creative .tag:hover { border-color: var(--gold); }
+
+.reel-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: .9rem; margin-top: 2.2rem; }
+.reel-slot {
+  aspect-ratio: 9/16; border-radius: 12px;
+  border: 1.5px dashed var(--on-ink-bd);
+  background: rgba(255,255,255,.03);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .8rem;
+  text-align: center; padding: 1rem;
+}
+.reel-play { width:0; height:0; border-top:8px solid transparent; border-bottom:8px solid transparent; border-left:13px solid rgba(255,255,255,.3); }
+.reel-tag { font-size: .66rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); }
+.reel-label { font-size: .74rem; font-weight: 600; color: var(--on-ink-mu); line-height: 1.5; }
+.reel-note { font-size: .8rem; color: var(--on-ink-mu); margin-top: 1.1rem; }
 
 /* ── CONTACT ── */
 .contact-box {
@@ -321,9 +456,12 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
   .stat:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); }
   .stat:nth-last-child(-n+2) { border-bottom: none; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .pillars { grid-template-columns: 1fr; }
   .services { grid-template-columns: 1fr; }
+  .services-2 { grid-template-columns: 1fr; }
   .work-row { grid-template-columns: 1fr; gap: .5rem; }
   .ci-top, .ci-bottom { grid-template-columns: 1fr; }
+  .reel-grid { grid-template-columns: repeat(2,1fr); }
   .nav-right .nav-link { display: none; }
 }
 </style>
@@ -334,9 +472,9 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
   <a class="nav-name" href="#"><img src="images/systems/smith_headshot.jpg" alt="" class="nav-avatar">Smith Onyekwereh</a>
   <div class="nav-right">
     <a class="nav-link" href="#about">About</a>
-    <a class="nav-link" href="#services">Services</a>
-    <a class="nav-link" href="#work">Work</a>
-    <a class="nav-link" href="#systems">Systems</a>
+    <a class="nav-link" href="#operations">Operations</a>
+    <a class="nav-link" href="#law">Law</a>
+    <a class="nav-link" href="#creative">Creative</a>
     <a class="btn btn-navy" href="#contact" style="padding:.45rem 1.05rem; font-size:.82rem;">Let's talk</a>
   </div>
 </nav>
@@ -344,11 +482,41 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 <!-- HERO -->
 <section class="hero">
   <h1 class="rise d2">Smith<br><span class="accent">Onyekwereh.</span></h1>
-  <p class="hero-sub rise d3">Virtual and Administrative Assistant with nearly two years of remote experience. I use <strong>AI, operations and automation</strong> to do the work better: I run creator programs, build the systems that run them with Claude Code, and keep every workstream reported, documented, and moving.</p>
+  <p class="hero-sub rise d3">Virtual and Administrative Assistant with two-plus years of remote experience. I use <strong>AI, operations and automation</strong> to do the work better: I run creator programs, build the systems that run them with Claude Code, and keep every workstream reported, documented, and moving.</p>
   <div class="hero-ctas rise d4">
     <a class="btn btn-navy" href="mailto:smithonyekwereh1@gmail.com">Get in touch</a>
     <a class="btn btn-outline" href="Smith%20Onyekwereh%20CV%20(Executive%20Assistant).pdf" target="_blank" rel="noopener">Download CV</a>
     <a class="btn btn-outline" href="https://linkedin.com/in/smithonyekwereh" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section id="pillars">
+  <div class="sec-label fade">How I work</div>
+  <div class="sec-title fade" style="margin-bottom:1rem;">Three sides,<br>one operator.</div>
+  <p class="sec-intro fade" style="margin-top:0;">I don't keep these in separate lanes. The same person runs a fintech's creator payroll, drafted IP research memoranda in Belgium, and grew a YouTube channel to 10K subscribers with AI-animated video. Pick a side to start.</p>
+  <div class="pillars">
+    <a class="pillar pillar-ops fade" href="#operations">
+      <div class="pillar-mark pillar-mark-ops"><i></i><i></i><i></i><i></i></div>
+      <div class="pillar-eyebrow">01</div>
+      <div class="pillar-name">Operations<br>&amp; AI</div>
+      <p class="pillar-body">Creator programs, payroll and posting-compliance systems — directed and built with Claude AI, deployed live.</p>
+      <span class="pillar-cta">Enter <span class="arrow">↓</span></span>
+    </a>
+    <a class="pillar pillar-law fade" href="#law">
+      <div class="pillar-mark pillar-mark-law">§</div>
+      <div class="pillar-eyebrow">02</div>
+      <div class="pillar-name">Law</div>
+      <p class="pillar-body">IP research, contract drafting and legal memoranda, from doctoral research to live commercial agreements.</p>
+      <span class="pillar-cta">Enter <span class="arrow">↓</span></span>
+    </a>
+    <a class="pillar pillar-creative fade" href="#creative">
+      <div class="pillar-mark pillar-mark-creative"></div>
+      <div class="pillar-eyebrow">03</div>
+      <div class="pillar-name">Creative<br>&amp; AI Video</div>
+      <p class="pillar-body">AI-animated video production and social platforms grown from zero — 382K views on a single piece.</p>
+      <span class="pillar-cta">Enter <span class="arrow">↓</span></span>
+    </a>
   </div>
 </section>
 
@@ -411,7 +579,7 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
     </div>
     <div class="about-text">
       <p>I'm a Virtual and Administrative Assistant, and AI, operations and automation are how I do the job better. Day to day I run two creator marketing programs, for NorthQuest Finance (a CBN-regulated fintech) and CashDrive (an automotive UGC program): recruitment, contracts, correspondence, payments, and reporting. When those programs needed real tooling, I specified and directed Claude AI through building it: onboarding flows, posting trackers, automated payment registers. Then I deployed and tested everything myself.</p>
-      <p>I like problems that do not have an obvious system yet. I like creating systems, organizing things, and finding what's repetitive so it can be simplified or done away with. Give me something scattered and I will build the structure. Underneath it all: a law degree, IP research for a PhD project in Belgium, and an AI-animated YouTube channel grown from scratch.</p>
+      <p>I like problems that do not have an obvious system yet. I like creating systems, organizing things, and finding what's repetitive so it can be simplified or done away with. Give me something scattered and I will build the structure. Underneath it all: a law degree, IP research for a PhD project in Belgium, and an AI-animated YouTube channel grown from scratch — the three sides below.</p>
       <div class="tags">
         <span class="tag">Virtual assistance</span>
         <span class="tag">AI operations</span>
@@ -428,170 +596,202 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 
 <div class="divider"></div>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="sec-title fade">What I do.</div>
-  <div class="services">
-    <div class="service fade">
+<!-- ============ CHAPTER 01 — OPERATIONS & AI ============ -->
+<section id="operations" class="chapter chapter-ops">
+  <div class="chapter-eyebrow fade">01 — Operations &amp; AI</div>
+  <div class="chapter-title fade">Run the program.<br>Build what runs it.</div>
+  <p class="sec-intro fade" style="margin-top:0;">Two live creator-marketing programs, and the operations platforms behind them — specified, directed, and shipped by me with Claude AI.</p>
+
+  <div class="services fade" style="margin-bottom:3rem;">
+    <div class="service">
       <span class="service-num">01</span>
       <div class="service-name">AI Operations &amp; Automation</div>
       <p class="service-body">Specifying and directing AI-built operations systems with Claude and ChatGPT: onboarding flows, payment automation, posting-compliance tracking, data-integrity checks. I deploy and test them end to end on live infrastructure.</p>
     </div>
-    <div class="service fade">
+    <div class="service">
       <span class="service-num">02</span>
       <div class="service-name">Executive &amp; Administrative Support</div>
       <p class="service-body">Calendar and inbox management, scheduling, stakeholder correspondence, payment tracking, database management, recruitment coordination, and day-to-day operational support. Nothing gets dropped.</p>
     </div>
-    <div class="service fade">
+    <div class="service">
       <span class="service-num">03</span>
       <div class="service-name">Communications &amp; Coordination</div>
       <p class="service-body">Email drafting, meeting minutes, client-facing correspondence, follow-up management, and multi-party coordination across email, WhatsApp, and phone. Clean, professional communication on your behalf.</p>
     </div>
-    <div class="service fade">
-      <span class="service-num">04</span>
-      <div class="service-name">Social Media Management</div>
-      <p class="service-body">Editorial calendars, audience growth, community engagement, and full inbox handling. I grew Pidgin Poetry from 20 to 491 followers, published 150+ posts, and answered 100+ inquiries a month.</p>
+  </div>
+
+  <div class="work-list">
+    <div class="work-row fade">
+      <div>
+        <div class="work-period">Mar 2026 – Present</div>
+        <div class="work-org">NorthQuest Finance</div>
+      </div>
+      <div>
+        <div class="work-role">Creator Program Administrative Manager</div>
+        <p class="work-detail">Run a UGC creator marketing program for a CBN-regulated fintech: recruitment pipelines, contract review and revision, a 99-profile creator database, payment tracking, and all stakeholder correspondence for a 30+ person remote team. Directed the build of the program's full operations platform using Claude AI, covering onboarding, posting-compliance tracking, and an automated payment register.</p>
+        <span class="badge">Current</span>
+        <div><a class="case-link" href="#nq-system">See the system built for this program ↓</a></div>
+      </div>
     </div>
-    <div class="service fade">
-      <span class="service-num">05</span>
-      <div class="service-name">Video Creation &amp; AI Production</div>
-      <p class="service-body">AI-animated video production with Kling, Wan 2.1, and CapCut: scripting, generation, editing, captions, and Yoruba-English transcription. My highest-performing piece reached 382,000 views.</p>
+
+    <div class="work-row fade">
+      <div>
+        <div class="work-period">Mar 2026 – Present</div>
+        <div class="work-org">CashDrive</div>
+      </div>
+      <div>
+        <div class="work-role">Creator Program Manager</div>
+        <p class="work-detail">Manage the creator marketing program for a Lagos automotive brand: creator onboarding, daily posting compliance, and payroll. Drafted the program's creator agreement with a sales-attribution bonus structure, and directed the build of its own payroll and posting-compliance system, from intake and a rate-limited posting log to vehicle-sale bonus tracking and an auto-calculated payments register.</p>
+        <span class="badge">Current</span>
+        <div><a class="case-link" href="#cd-system">See the system built for this program ↓</a></div>
+      </div>
     </div>
-    <div class="service fade">
-      <span class="service-num">06</span>
+  </div>
+
+  <div style="margin-top:3.5rem;">
+    <div class="sec-label fade">Systems &amp; Products</div>
+    <p class="sec-intro fade" style="margin-top:.5rem;">Beyond the day-to-day, I direct the end-to-end build of the tools that run my programs. I write the requirements, business rules, and edge cases, then work with Claude AI to build, test, and deploy each system live.</p>
+
+    <div class="case-study fade" id="nq-system">
+      <div class="case-head">
+        <h3 class="case-name">NorthQuest · Creator Program Operations Platform</h3>
+        <div class="case-badges"><span class="badge">30+ person team</span><span class="badge badge-gold">Continuously iterated</span></div>
+      </div>
+      <a class="case-link case-live-link" href="https://smithstem.vercel.app" target="_blank" rel="noopener">Visit the live platform <span class="arrow">↗</span></a>
+      <p class="case-detail">The operations platform behind the fintech's UGC program, built and then refined through round after round of iteration until the daily routine runs itself. Creators log posts through a tracker that enforces a 2-posts/day cap by server timestamp and catches duplicate video links. A <strong>12-step onboarding flow</strong> takes each new creator from welcome screen to signed contract. The <strong>payment register calculates every creator's pay live</strong> from logged posts, and the 99-profile database keeps private fields sealed away from the public app. The compensation model was migrated from per-video rates to flat monthly salaries with no service interruption.</p>
+      <div class="ci-top">
+        <figure><img src="images/systems/nq_real_posting.png" alt="NorthQuest posting log where creators log daily videos"><figcaption>The posting log · creators log each day's videos here</figcaption></figure>
+        <div class="ci-stack">
+          <figure><img src="images/systems/nq_dashboard.png" alt="NorthQuest admin dashboard"><figcaption>Admin dashboard · today at a glance</figcaption></figure>
+          <figure><img src="images/systems/nq_register.png" alt="NorthQuest payment register with totals"><figcaption>Payment register · salary, bonus and totals calculated live</figcaption></figure>
+        </div>
+      </div>
+      <div class="ci-bottom">
+        <figure><img src="images/systems/nq_real_welcome.png" alt="NorthQuest onboarding welcome screen"><figcaption>Onboarding · the welcome every new creator meets</figcaption></figure>
+        <figure><img src="images/systems/nq_real_details.png" alt="NorthQuest onboarding details step"><figcaption>Onboarding · details step, everything needed to set up and pay</figcaption></figure>
+      </div>
+      <div class="ci-bottom" style="margin-top:1rem;">
+        <figure><img src="images/systems/nq_real_contract.png" alt="NorthQuest contract signing walkthrough"><figcaption>Onboarding · contract signing walkthrough</figcaption></figure>
+        <figure><img src="images/systems/nq_database_sheet.png" alt="NorthQuest creator database spreadsheet"><figcaption>The creator database · private columns stay admin-only</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="case-study fade" id="cd-system">
+      <div class="case-head">
+        <h3 class="case-name">CashDrive · Creator Payroll &amp; Sales-Attribution System</h3>
+        <div class="case-badges"><span class="badge">Live in production</span><span class="badge badge-gold">Single-session build</span></div>
+      </div>
+      <p class="case-detail">A separate system for the automotive program, built around what makes car sales different: a <strong>vehicle-sale and bonus tracker</strong> that attributes each confirmed sale to the creator whose content brought the buyer in. Discretionary bonuses stack into an <strong>auto-calculated payments register</strong> with no manual re-entry. Creator intake collects payment details and a typed contract signature in one four-step flow, and a WhatsApp help desk routes account and contract questions with pre-filled messages.</p>
+      <div class="ci-top">
+        <figure><img src="images/systems/cd_3_sales_tracker.png" alt="CashDrive vehicle sale and bonus tracker"><figcaption>Vehicle-sale &amp; bonus tracker · each sale attributed to a creator, bonus flowing to payroll</figcaption></figure>
+        <div class="ci-stack">
+          <figure><img src="images/systems/cd_1_onboarding.png" alt="CashDrive creator onboarding"><figcaption>Creator intake · payment details &amp; contract signing</figcaption></figure>
+          <figure><img src="images/systems/cd_2_roster.png" alt="CashDrive creator roster"><figcaption>Creator roster · earnings &amp; sales at a glance</figcaption></figure>
+        </div>
+      </div>
+      <div class="ci-bottom">
+        <figure><img src="images/systems/cd_4_payments.png" alt="CashDrive payments register"><figcaption>Payments register · bonuses auto-linked to confirmed sales</figcaption></figure>
+        <figure><img src="images/systems/cd_5_whatsapp.png" alt="CashDrive WhatsApp help desk"><figcaption>WhatsApp help desk · pre-filled creator support messages</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER 02 — LAW ============ -->
+<div class="chapter-law-wrap">
+<section id="law" class="chapter chapter-law">
+  <div class="chapter-eyebrow fade">02 — Law</div>
+  <div class="chapter-title fade">Trained to read<br>the fine print.</div>
+  <p class="sec-intro fade" style="margin-top:0;">A law degree underneath everything else here: IP research at doctoral level, contracts and Terms of Service drafted independently, and the same instinct for structure applied to case law instead of creator databases.</p>
+  <div class="law-rule fade"></div>
+
+  <div class="work-list">
+    <div class="work-row fade">
+      <div>
+        <div class="work-period">Oct 2024 – Mar 2025</div>
+        <div class="work-org">University of Antwerp / MIPLC · Belgium</div>
+      </div>
+      <div>
+        <div class="work-role">University Research Assistant</div>
+        <p class="work-detail">IP law research (copyright, trademarks, CMOs) for a PhD project at the University of Antwerp and Munich Intellectual Property Law Center. Built a 90+ contact stakeholder database across the US and Netherlands. Drafted memoranda, contracts, and Terms of Service independently.</p>
+        <div class="testimonial"><p>"Thank you for your kind words and your dedication to the project. Your contributions were invaluable, and I truly appreciate your hard work and enthusiasm."</p><cite>— Seun Lari-Williams, PhD Researcher</cite></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="services services-1 fade" style="margin-top:2.5rem;">
+    <div class="service">
+      <span class="service-num">03</span>
       <div class="service-name">Legal &amp; Academic Research</div>
       <p class="service-body">Case law analysis, contract review and drafting, legal memoranda, and structured research databases, built across doctoral-level IP research, a global law firm's pro bono programme, and live commercial contracts.</p>
     </div>
   </div>
 </section>
+</div>
 
-<div class="divider"></div>
+<!-- ============ CHAPTER 03 — CREATIVE & AI VIDEO ============ -->
+<div class="chapter-creative-wrap">
+<section id="creative" class="chapter chapter-creative">
+  <div class="chapter-eyebrow fade">03 — Creative &amp; AI Video</div>
+  <div class="chapter-title fade">Same systems thinking.<br>Pointed at a story.</div>
+  <p class="sec-intro fade" style="margin-top:0;">AI-animated video production and the social platforms built to carry it — scripting, generation, editing, and an audience grown from zero.</p>
 
-<!-- WORK -->
-<section id="work">
-  <div class="sec-label fade">Experience</div>
-  <div class="sec-title fade">Selected work.</div>
+  <div class="work-list">
+    <div class="work-row fade">
+      <div>
+        <div class="work-period">Nov 2024 – Present</div>
+        <div class="work-org">Aunty Akanke</div>
+      </div>
+      <div>
+        <div class="work-role">AI Video Content Manager</div>
+        <p class="work-detail">Produced and edited 9 AI-animated video segments using Kling, Wan 2.1, and CapCut. Highest single video: 382,000 views. Grew the channel from 108 to 10,000+ subscribers in under 9 months. Transcribed and translated Yoruba audio to English.</p>
+        <span class="badge badge-gold">382K views</span><span class="badge">Yoruba · English translation</span>
+        <div class="testimonial"><p>"Thank you very much for the video. The images are amazingly beautiful. Welldone!"</p><cite>— Mrs Feyi, Aunty Akanke</cite></div>
+        <div class="work-proof-row">
+          <figure><img src="images/systems/proof_youtube_channel.jpg" alt="Tales with Aunty Akanke YouTube channel, 10.9K subscribers"><figcaption>Tales with Aunty Akanke — 10.9K subscribers, 23 videos</figcaption></figure>
+          <figure><img src="images/systems/proof_youtube_views.jpg" alt="Tales with Aunty Akanke video view counts, up to 382K views"><figcaption>Real view counts on the channel — up to 382K</figcaption></figure>
+        </div>
+      </div>
+    </div>
 
-  <div class="work-row fade">
-    <div>
-      <div class="work-period">Mar 2026 – Present</div>
-      <div class="work-org">NorthQuest Finance</div>
-    </div>
-    <div>
-      <div class="work-role">Creator Program Administrative Manager</div>
-      <p class="work-detail">Run a UGC creator marketing program for a CBN-regulated fintech: recruitment pipelines, contract review and revision, a 99-profile creator database, payment tracking, and all stakeholder correspondence for a 30+ person remote team. Directed the build of the program's full operations platform using Claude AI, covering onboarding, posting-compliance tracking, and an automated payment register.</p>
-      <span class="badge">Current</span>
-      <div><a class="case-link" href="#systems">See the system built for this program →</a></div>
-    </div>
-  </div>
-
-  <div class="work-row fade">
-    <div>
-      <div class="work-period">Mar 2026 – Present</div>
-      <div class="work-org">CashDrive</div>
-    </div>
-    <div>
-      <div class="work-role">Creator Program Manager</div>
-      <p class="work-detail">Manage the creator marketing program for a Lagos automotive brand: creator onboarding, daily posting compliance, and payroll. Drafted the program's creator agreement with a sales-attribution bonus structure, and directed the build of its own payroll and posting-compliance system, from intake and a rate-limited posting log to vehicle-sale bonus tracking and an auto-calculated payments register.</p>
-      <span class="badge">Current</span>
-      <div><a class="case-link" href="#systems">See the system built for this program →</a></div>
-    </div>
-  </div>
-
-  <div class="work-row fade">
-    <div>
-      <div class="work-period">Oct 2024 – Mar 2025</div>
-      <div class="work-org">University of Antwerp / MIPLC · Belgium</div>
-    </div>
-    <div>
-      <div class="work-role">University Research Assistant</div>
-      <p class="work-detail">IP law research (copyright, trademarks, CMOs) for a PhD project at the University of Antwerp and Munich Intellectual Property Law Center. Built a 90+ contact stakeholder database across the US and Netherlands. Drafted memoranda, contracts, and Terms of Service independently.</p>
-      <div class="testimonial"><p>"Thank you for your kind words and your dedication to the project. Your contributions were invaluable, and I truly appreciate your hard work and enthusiasm."</p><cite>— Seun Lari-Williams, PhD Researcher</cite></div>
-    </div>
-  </div>
-
-  <div class="work-row fade">
-    <div>
-      <div class="work-period">Nov 2024 – Present</div>
-      <div class="work-org">Aunty Akanke</div>
-    </div>
-    <div>
-      <div class="work-role">AI Video Content Manager</div>
-      <p class="work-detail">Produced and edited 9 AI-animated video segments using Kling, Wan 2.1, and CapCut. Highest single video: 382,000 views. Grew the channel from 108 to 10,000+ subscribers in under 9 months. Transcribed and translated Yoruba audio to English.</p>
-      <span class="badge badge-gold">382K views</span><span class="badge">Yoruba · English translation</span>
-      <div class="testimonial"><p>"Thank you very much for the video. The images are amazingly beautiful. Welldone!"</p><cite>— Mrs Feyi, Aunty Akanke</cite></div>
-      <div class="work-proof-row">
-        <figure><img src="images/systems/proof_youtube_channel.jpg" alt="Tales with Aunty Akanke YouTube channel, 10.9K subscribers"><figcaption>Tales with Aunty Akanke — 10.9K subscribers, 23 videos</figcaption></figure>
-        <figure><img src="images/systems/proof_youtube_views.jpg" alt="Tales with Aunty Akanke video view counts, up to 382K views"><figcaption>Real view counts on the channel — up to 382K</figcaption></figure>
+    <div class="work-row fade">
+      <div>
+        <div class="work-period">Nov 2024 – Apr 2025</div>
+        <div class="work-org">Pidgin Poetry</div>
+      </div>
+      <div>
+        <div class="work-role">Managing Editor &amp; Social Media Manager</div>
+        <p class="work-detail">Grew the platform from 20 to 491 followers in 5 months. Published 150+ original posts, ran the platform's first open poetry contest, managed all inbox correspondence for 100+ monthly inquiries, created Canva graphics, and sent weekly Mailchimp newsletters.</p>
+        <figure class="work-proof"><img src="images/systems/proof_pidginpoetry.jpg" alt="Pidgin Poetry Instagram page"><figcaption>Pidgin Poetry on Instagram — @pidginpoetry</figcaption></figure>
       </div>
     </div>
   </div>
 
-  <div class="work-row fade">
-    <div>
-      <div class="work-period">Nov 2024 – Apr 2025</div>
-      <div class="work-org">Pidgin Poetry</div>
+  <div class="services services-2 fade" style="margin-top:1rem;">
+    <div class="service">
+      <span class="service-num">04</span>
+      <div class="service-name">Social Media Management</div>
+      <p class="service-body">Editorial calendars, audience growth, community engagement, and full inbox handling. I grew Pidgin Poetry from 20 to 491 followers, published 150+ posts, and answered 100+ inquiries a month.</p>
     </div>
-    <div>
-      <div class="work-role">Managing Editor &amp; Social Media Manager</div>
-      <p class="work-detail">Grew the platform from 20 to 491 followers in 5 months. Published 150+ original posts, ran the platform's first open poetry contest, managed all inbox correspondence for 100+ monthly inquiries, created Canva graphics, and sent weekly Mailchimp newsletters.</p>
-      <figure class="work-proof"><img src="images/systems/proof_pidginpoetry.jpg" alt="Pidgin Poetry Instagram page"><figcaption>Pidgin Poetry on Instagram — @pidginpoetry</figcaption></figure>
+    <div class="service">
+      <span class="service-num">05</span>
+      <div class="service-name">Video Creation &amp; AI Production</div>
+      <p class="service-body">AI-animated video production with Kling, Wan 2.1, and CapCut: scripting, generation, editing, captions, and Yoruba-English transcription. My highest-performing piece reached 382,000 views.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem;">
+    <div class="chapter-eyebrow fade" style="font-size:.68rem;">More samples</div>
+    <p class="sec-intro fade" style="margin:.4rem 0 0; max-width:560px;">TikTok and additional AI-animated clips are landing here next — this grid is built and waiting for them.</p>
+    <div class="reel-grid fade">
+      <div class="reel-slot"><span class="reel-play"></span><span class="reel-tag">TikTok</span><span class="reel-label">Sample coming</span></div>
+      <div class="reel-slot"><span class="reel-play"></span><span class="reel-tag">AI-animated</span><span class="reel-label">Sample coming</span></div>
+      <div class="reel-slot"><span class="reel-play"></span><span class="reel-tag">TikTok</span><span class="reel-label">Sample coming</span></div>
+      <div class="reel-slot"><span class="reel-play"></span><span class="reel-tag">TikTok</span><span class="reel-label">Sample coming</span></div>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
-
-<!-- SYSTEMS -->
-<section id="systems">
-  <div class="sec-title fade" style="margin-bottom:.6rem;">Things I've built.</div>
-  <div class="sec-label fade" style="margin-bottom:1.8rem;">Systems &amp; Products</div>
-  <p class="sec-intro fade" style="margin-top:0;">Beyond the day-to-day, I direct the end-to-end build of the tools that run my programs. I write the requirements, business rules, and edge cases, then work with Claude AI to build, test, and deploy each system live. Names and figures below are placeholders; the real systems run in production with live creator and payment records.</p>
-
-  <div class="case-study fade">
-    <div class="case-head">
-      <h3 class="case-name">NorthQuest · Creator Program Operations Platform</h3>
-      <div class="case-badges"><span class="badge">30+ person team</span><span class="badge badge-gold">Continuously iterated</span></div>
-    </div>
-    <p class="case-detail">The operations platform behind the fintech's UGC program, built and then refined through round after round of iteration until the daily routine runs itself. Creators log posts through a tracker that enforces a 2-posts/day cap by server timestamp and catches duplicate video links. A <strong>12-step onboarding flow</strong> takes each new creator from welcome screen to signed contract. The <strong>payment register calculates every creator's pay live</strong> from logged posts, and the 99-profile database keeps private fields sealed away from the public app. The compensation model was migrated from per-video rates to flat monthly salaries with no service interruption.</p>
-    <div class="ci-top">
-      <figure><img src="images/systems/nq_real_posting.png" alt="NorthQuest posting log where creators log daily videos"><figcaption>The posting log · creators log each day's videos here</figcaption></figure>
-      <div class="ci-stack">
-        <figure><img src="images/systems/nq_dashboard.png" alt="NorthQuest admin dashboard"><figcaption>Admin dashboard · today at a glance</figcaption></figure>
-        <figure><img src="images/systems/nq_register.png" alt="NorthQuest payment register with totals"><figcaption>Payment register · salary, bonus and totals calculated live</figcaption></figure>
-      </div>
-    </div>
-    <div class="ci-bottom">
-      <figure><img src="images/systems/nq_real_welcome.png" alt="NorthQuest onboarding welcome screen"><figcaption>Onboarding · the welcome every new creator meets</figcaption></figure>
-      <figure><img src="images/systems/nq_real_details.png" alt="NorthQuest onboarding details step"><figcaption>Onboarding · details step, everything needed to set up and pay</figcaption></figure>
-    </div>
-    <div class="ci-bottom" style="margin-top:1rem;">
-      <figure><img src="images/systems/nq_real_contract.png" alt="NorthQuest contract signing walkthrough"><figcaption>Onboarding · contract signing walkthrough</figcaption></figure>
-      <figure><img src="images/systems/nq_database_sheet.png" alt="NorthQuest creator database spreadsheet"><figcaption>The creator database · private columns stay admin-only</figcaption></figure>
-    </div>
-  </div>
-
-  <div class="case-study fade">
-    <div class="case-head">
-      <h3 class="case-name">CashDrive · Creator Payroll &amp; Sales-Attribution System</h3>
-      <div class="case-badges"><span class="badge">Live in production</span><span class="badge badge-gold">Single-session build</span></div>
-    </div>
-    <p class="case-detail">A separate system for the automotive program, built around what makes car sales different: a <strong>vehicle-sale and bonus tracker</strong> that attributes each confirmed sale to the creator whose content brought the buyer in. Discretionary bonuses stack into an <strong>auto-calculated payments register</strong> with no manual re-entry. Creator intake collects payment details and a typed contract signature in one four-step flow, and a WhatsApp help desk routes account and contract questions with pre-filled messages.</p>
-    <div class="ci-top">
-      <figure><img src="images/systems/cd_3_sales_tracker.png" alt="CashDrive vehicle sale and bonus tracker"><figcaption>Vehicle-sale &amp; bonus tracker · each sale attributed to a creator, bonus flowing to payroll</figcaption></figure>
-      <div class="ci-stack">
-        <figure><img src="images/systems/cd_1_onboarding.png" alt="CashDrive creator onboarding"><figcaption>Creator intake · payment details &amp; contract signing</figcaption></figure>
-        <figure><img src="images/systems/cd_2_roster.png" alt="CashDrive creator roster"><figcaption>Creator roster · earnings &amp; sales at a glance</figcaption></figure>
-      </div>
-    </div>
-    <div class="ci-bottom">
-      <figure><img src="images/systems/cd_4_payments.png" alt="CashDrive payments register"><figcaption>Payments register · bonuses auto-linked to confirmed sales</figcaption></figure>
-      <figure><img src="images/systems/cd_5_whatsapp.png" alt="CashDrive WhatsApp help desk"><figcaption>WhatsApp help desk · pre-filled creator support messages</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
+</div>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -611,6 +811,14 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
 <footer>
   &copy; 2026 Smith Onyekwereh &nbsp;&middot;&nbsp; Remote, GMT+1
 </footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image">&times;</button>
+  <div class="lightbox-inner">
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-cap" id="lightbox-cap"></div>
+  </div>
+</div>
 
 <script>
 const io = new IntersectionObserver(entries => {
@@ -646,6 +854,41 @@ const numIO = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-val]').forEach(el => numIO.observe(el));
+
+/* ── ACTIVE NAV LINK ON SCROLL ── */
+const navLinks = document.querySelectorAll('.nav-link');
+const navSections = ['about', 'operations', 'law', 'creative']
+  .map(id => document.getElementById(id))
+  .filter(Boolean);
+const navIO = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const id = entry.target.id;
+    navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + id));
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+navSections.forEach(sec => navIO.observe(sec));
+
+/* ── LIGHTBOX FOR SCREENSHOTS ── */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCap = document.getElementById('lightbox-cap');
+function openLightbox(img) {
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+  lightboxCap.textContent = img.alt;
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.case-study figure img, .work-proof-row img, .work-proof img').forEach(img => {
+  img.addEventListener('click', () => openLightbox(img));
+});
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
