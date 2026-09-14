@@ -245,14 +245,27 @@ h1 .accent { color: var(--navy); }
 .about-heading em { font-style: normal; color: var(--gold); }
 .about-text p { font-size: .98rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
 .about-text p:last-of-type { margin-bottom: 1.6rem; }
-.tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.tags { display: flex; flex-wrap: wrap; gap: .7rem .55rem; padding-top: .35rem; }
 .tag {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: 100px; padding: .3rem .95rem;
   font-size: .76rem; font-weight: 700; color: var(--text);
-  transition: border-color .2s, transform .2s;
+  opacity: 0; transform: translateY(-90px) rotate(0deg);
+  transition: transform .7s cubic-bezier(.22,1.6,.4,1), opacity .4s ease, box-shadow .2s, border-color .2s;
 }
-.tag:hover { border-color: var(--gold); transform: translateY(-2px); }
+.tag.dropped { opacity: 1; transform: rotate(var(--r, 0deg)); }
+.tag.dropped:hover { transform: rotate(var(--r, 0deg)) translateY(-4px) scale(1.06); border-color: var(--gold); box-shadow: 0 10px 22px -10px rgba(17,17,17,.28); z-index: 2; }
+.tag:nth-child(1) { --r: -7deg; }
+.tag:nth-child(2) { --r: 4deg; background: var(--navy); color: #fff; border-color: var(--navy); }
+.tag:nth-child(3) { --r: -4deg; background: var(--gold); color: var(--navy-2); border-color: var(--gold); }
+.tag:nth-child(4) { --r: 8deg; }
+.tag:nth-child(5) { --r: -8deg; background: var(--navy); color: #fff; border-color: var(--navy); }
+.tag:nth-child(6) { --r: 3deg; }
+.tag:nth-child(7) { --r: -3deg; background: var(--gold); color: var(--navy-2); border-color: var(--gold); }
+.tag:nth-child(8) { --r: 6deg; }
+@media (prefers-reduced-motion: reduce) {
+  .tag { opacity: 1; transform: rotate(var(--r, 0deg)); transition: none; }
+}
 .about-photo { margin: 1.7rem 0 0; }
 .about-photo img { width: 100%; display: block; border-radius: 14px; border: 1px solid var(--border); }
 .about-photo figcaption { font-size: .74rem; color: var(--faint); margin-top: .55rem; font-weight: 600; }
@@ -884,6 +897,19 @@ const numIO = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-val]').forEach(el => numIO.observe(el));
+
+/* ── SKILL TAGS DROP IN AND SCATTER ── */
+const tagIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    [...e.target.querySelectorAll('.tag')].forEach((tag, i) => {
+      tag.style.transitionDelay = (i * 90) + 'ms';
+      tag.classList.add('dropped');
+    });
+    tagIO.unobserve(e.target);
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.tags').forEach(el => tagIO.observe(el));
 
 /* ── ACTIVE NAV LINK ON SCROLL ── */
 const navLinks = document.querySelectorAll('.nav-link');
