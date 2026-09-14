@@ -72,28 +72,42 @@ nav {
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   height: 62px;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between; gap: .75rem;
   padding: 0 clamp(1.25rem, 5vw, 3rem);
 }
 
 .nav-name {
-  display: flex; align-items: center; gap: .6rem;
+  display: flex; align-items: center; gap: .6rem; min-width: 0;
   font-weight: 800; font-size: 1rem;
   letter-spacing: -0.02em;
   color: var(--text);
   text-decoration: none;
 }
-.nav-avatar { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
+.nav-name span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nav-avatar { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); flex-shrink: 0; }
 
-.nav-right { display: flex; align-items: center; gap: 1.5rem; }
-
-.nav-link {
-  text-decoration: none; color: var(--muted);
-  font-size: .85rem; font-weight: 600;
-  transition: color .2s;
+.nav-cta {
+  display: inline-flex; align-items: center; gap: .4rem; flex-shrink: 0;
+  font-size: .85rem; font-weight: 700; color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color .2s, color .2s;
 }
-.nav-link:hover { color: var(--text); }
-.nav-link.active { color: var(--navy); font-weight: 700; }
+.nav-cta:hover { border-color: var(--navy); color: var(--navy-2); }
+.nav-cta .arrow { display: inline-block; transition: transform .18s; }
+.nav-cta:hover .arrow { transform: translate(2px,-2px); }
+
+.cta-link {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: 1rem; font-weight: 700; color: var(--navy);
+  text-decoration: none;
+  border-bottom: 2px solid var(--navy);
+  padding-bottom: .15rem;
+  transition: color .2s, border-color .2s, gap .2s;
+}
+.cta-link:hover { color: var(--navy-2); border-color: var(--navy-2); gap: .7rem; }
+.cta-link .arrow { display: inline-block; transition: transform .18s; }
+.cta-link:hover .arrow { transform: translate(3px,-3px); }
 
 /* ── BUTTONS ── */
 .btn {
@@ -477,30 +491,23 @@ footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--fain
   .work-row { grid-template-columns: 1fr; gap: .5rem; }
   .ci-top, .ci-bottom { grid-template-columns: 1fr; }
   .reel-grid { grid-template-columns: repeat(2,1fr); }
-  .nav-right .nav-link { display: none; }
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-name" href="#"><img src="images/systems/smith_headshot.jpg" alt="" class="nav-avatar">Smith Onyekwereh</a>
-  <div class="nav-right">
-    <a class="nav-link" href="#about">About</a>
-    <a class="nav-link" href="#operations">Operations</a>
-    <a class="nav-link" href="#law">Law</a>
-    <a class="nav-link" href="#creative">Creative</a>
-    <a class="btn btn-navy" href="#contact" style="padding:.45rem 1.05rem; font-size:.82rem;">Let's talk</a>
-  </div>
+  <a class="nav-name" href="#"><img src="images/systems/smith_headshot.jpg" alt="" class="nav-avatar"><span>Smith Timileyin Onyekwereh</span></a>
+  <a class="nav-cta" href="mailto:smithonyekwereh1@gmail.com">Get in touch <span class="arrow">↗</span></a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <h1 class="rise d2">Smith<br><span class="accent">Onyekwereh.</span></h1>
+  <h1 class="rise d2">Smith Timileyin<br><span class="accent">Onyekwereh.</span></h1>
   <p class="hero-credential rise d3">Operations &amp; Administrative Manager · Barrister-at-Law</p>
   <p class="hero-sub rise d3">I build operation systems for businesses.</p>
   <div class="hero-ctas rise d4">
-    <a class="btn btn-navy" href="mailto:smithonyekwereh1@gmail.com">Get in touch</a>
+    <a class="cta-link" href="mailto:smithonyekwereh1@gmail.com">Get in touch <span class="arrow">↗</span></a>
   </div>
 </section>
 
@@ -910,20 +917,6 @@ const tagIO = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.3 });
 document.querySelectorAll('.tags').forEach(el => tagIO.observe(el));
-
-/* ── ACTIVE NAV LINK ON SCROLL ── */
-const navLinks = document.querySelectorAll('.nav-link');
-const navSections = ['about', 'operations', 'law', 'creative']
-  .map(id => document.getElementById(id))
-  .filter(Boolean);
-const navIO = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const id = entry.target.id;
-    navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + id));
-  });
-}, { rootMargin: '-45% 0px -50% 0px' });
-navSections.forEach(sec => navIO.observe(sec));
 
 /* ── LIGHTBOX FOR SCREENSHOTS ── */
 const lightbox = document.getElementById('lightbox');
