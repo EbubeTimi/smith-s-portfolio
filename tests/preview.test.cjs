@@ -1,0 +1,10 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const html = fs.readFileSync('preview.html','utf8');
+for (const term of ['AI Operations','2+ years','Soil Edu','Head of Products, NorthQuest Finance','mailto:smithonyekwereh1@gmail.com','Fictional demo']) assert.ok(html.includes(term),term);
+assert.ok(fs.readFileSync('preview.css','utf8').includes('prefers-reduced-motion'));
+for (const banned of ['18 months','Daniel Torkura','GrowthCooks']) assert.ok(!html.includes(banned),banned);
+assert.ok(html.includes('preload="none"'));
+assert.ok(!html.includes('autoplay'));
+assert.ok(html.includes('case-operations'));
+console.log('PASS: approved content, privacy and preview contract');

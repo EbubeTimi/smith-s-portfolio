@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-09-11T19:15:59.790Z",
+  "revision": "f64aa5b0b1e1f13c45d66234b44f82f7dcf996a0",
+  "workingTree": "?? .gitignore\n?? .impeccable/\n?? BUILD_STATE.json\n?? DESIGN.md\n?? PREVIEW_HANDOFF.md\n?? PRODUCT.md\n?? package.json\n?? preview-assets/\n?? preview-media/\n?? preview.css\n?? preview.html\n?? preview.js\n?? tests/",
+  "preview": "http://127.0.0.1:4174/preview.html",
+  "originalHomepageUnchanged": true,
+  "browserEvidence": {
+    "modifiedAt": "2026-09-11T19:15:59.668Z",
+    "results": [
+      {
+        "width": 1440,
+        "passed": true,
+        "errors": [],
+        "videoDeferred": true,
+        "videoPlayback": true,
+        "caseNavigation": true,
+        "errorRetry": true,
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "passed": true,
+        "errors": [],
+        "videoDeferred": true,
+        "videoPlayback": true,
+        "caseNavigation": true,
+        "errorRetry": true,
+        "overflow": false
+      },
+      {
+        "width": 320,
+        "passed": true,
+        "errors": [],
+        "videoDeferred": true,
+        "videoPlayback": true,
+        "caseNavigation": true,
+        "errorRetry": true,
+        "overflow": false
+      }
+    ]
+  },
+  "mediaEvidence": "preview-media/provenance.json",
+  "scope": "Local static preview only; no production integrations or deployment",
+  "unverified": [
+    "Physical iOS/Android devices",
+    "Full assistive-technology audit",
+    "Historical marketing metrics independently audited"
+  ],
+  "approvalRequired": "Replace public homepage / deploy"
+}

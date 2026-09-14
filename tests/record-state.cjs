@@ -1,0 +1,5 @@
+const fs=require('node:fs'),cp=require('node:child_process');
+const git=(...args)=>cp.execFileSync('git',args,{encoding:'utf8'}).trim();
+const browser=JSON.parse(fs.readFileSync('evidence/browser-results.json','utf8'));
+const state={generatedAt:new Date().toISOString(),revision:git('rev-parse','HEAD'),workingTree:git('status','--short'),preview:'http://127.0.0.1:4174/preview.html',originalHomepageUnchanged:git('diff','--','index.html')==='',browserEvidence:{modifiedAt:fs.statSync('evidence/browser-results.json').mtime.toISOString(),results:browser},mediaEvidence:'preview-media/provenance.json',scope:'Local static preview only; no production integrations or deployment',unverified:['Physical iOS/Android devices','Full assistive-technology audit','Historical marketing metrics independently audited'],approvalRequired:'Replace public homepage / deploy'};
+fs.writeFileSync('BUILD_STATE.json',JSON.stringify(state,null,2)+'\n');console.log('Recorded build state from git and current browser evidence.');

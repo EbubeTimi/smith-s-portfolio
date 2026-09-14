@@ -1,0 +1,38 @@
+[
+  {
+    "source": "C:\\Users\\smith\\Videos\\CAPCUT\\EMMA.mp4",
+    "source_sha256": "8ab652537bf1b9e897f9a8601925ac550a2525fd0064183b3022eec6f4976094",
+    "source_bytes": 94586291,
+    "output": "emma.mp4",
+    "output_sha256": "2829ddb70de84a7a3fd7e1deb75b7f7a5d2bc4a87aab18d5cb2238c73b861de4",
+    "output_bytes": 7119635,
+    "poster": "emma.jpg",
+    "poster_second": 6,
+    "codec": "H.264 / AAC",
+    "watermark": "Smith Onyekwereh \u00b7 AI Filmmaking"
+  },
+  {
+    "source": "C:\\Users\\smith\\Videos\\CAPCUT\\TIMI.mp4",
+    "source_sha256": "047919d5d19c60202ebb3d7b079a9a4600c59cf6583a43476d058d7098fbfd05",
+    "source_bytes": 103693924,
+    "output": "timi.mp4",
+    "output_sha256": "08c0ade646c2ba70beb71df9607e1d7883329325bb99c4cbf3ecad66b041411c",
+    "output_bytes": 5978460,
+    "poster": "timi.jpg",
+    "poster_second": 8,
+    "codec": "H.264 / AAC",
+    "watermark": "Smith Onyekwereh \u00b7 AI Filmmaking"
+  },
+  {
+    "source": "C:\\Users\\smith\\Videos\\CAPCUT\\TRAILER F.mp4",
+    "source_sha256": "3359f62d214bdc9ad33c16c6a9a17b0d6e84a4e61d2f64e3d8c3ccd083d81d70",
+    "source_bytes": 88595458,
+    "output": "trailer.mp4",
+    "output_sha256": "e0501099ebf936e776e34e3d608d4cce4de279164637e57aa4b2191d3091a324",
+    "output_bytes": 5526042,
+    "poster": "trailer.jpg",
+    "poster_second": 8,
+    "codec": "H.264 / AAC",
+    "watermark": "Smith Onyekwereh \u00b7 AI Filmmaking"
+  }
+]

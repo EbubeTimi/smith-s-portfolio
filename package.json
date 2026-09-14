@@ -1,0 +1,11 @@
+{
+  "name": "smith-portfolio-preview",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preview": "node tests/serve.cjs",
+    "test": "node tests/preview.test.cjs",
+    "check": "node --check preview.js",
+    "test:browser": "node tests/browser.cjs"
+  }
+}

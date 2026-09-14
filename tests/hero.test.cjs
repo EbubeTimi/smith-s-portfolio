@@ -1,0 +1,11 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const html = fs.readFileSync('preview.html','utf8');
+const opening = html.split('id="home"')[1].split('</section>')[0];
+assert.ok(opening.includes('AI</span>') && opening.includes('Operations</span>'), 'professional identity leads');
+assert.ok(opening.includes('Smith Onyekwereh'), 'name in opening');
+assert.ok(!opening.includes('I turn complex work'), 'generic slogan removed');
+assert.ok(!opening.includes('smith_headshot'), 'no unconfirmed opening portrait');
+assert.ok(opening.includes('current-creator-record.png'), 'real operations evidence');
+assert.ok(html.includes('bottom-dock'), 'permanent navigation retained');
+console.log('PASS: new opening identity, evidence, portrait boundary and navigation');
